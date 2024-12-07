@@ -1,0 +1,20 @@
+.audioContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 100px; /* Ajustado para dar espacio al botón de cambiar tema */
+  z-index: 1000;
+  width: 46px;
+  height: 46px;
+  background: rgb(124, 97, 230);
+  padding: 15px;
+  border-radius: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.audioContainer:hover {
+  opacity: 0.9;
+} 

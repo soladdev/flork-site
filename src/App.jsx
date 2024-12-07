@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
+import AudioPlayer from './components/AudioPlayer/AudioPlayer'
 import './styles/globals.css'
 import './styles/variables.css'
 
@@ -112,6 +113,7 @@ function App() {
       >
         Cambiar Tema
       </button>
+      <AudioPlayer />
       <Header />
       <Hero />
     </div>
