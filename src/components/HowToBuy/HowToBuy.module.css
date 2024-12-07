@@ -1,0 +1,107 @@
+.container {
+  width: 100%;
+  padding: 100px 20px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 120px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #FFFFFF 0%, #8A6CFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.cardsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(145deg, rgba(138, 108, 255, 0.7) 0%, rgba(138, 108, 255, 0.3) 100%);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05) !important;
+}
+
+.cardContent {
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textContent {
+  text-align: left;
+}
+
+.textContent h3 {
+  color: white;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.textContent p {
+  color: white;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.iconsWrapper {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 80px;
+  }
+  
+  .cardsWrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .card {
+    transform: none !important;
+    width: 280px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 60px;
+  }
+} 

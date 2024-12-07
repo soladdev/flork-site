@@ -1,0 +1,83 @@
+.meetFlorkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.imageWrapper {
+  flex: 0 0 auto;
+  width: 40%;
+  max-width: 400px;
+}
+
+.florkImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.contentWrapper {
+  text-align: justify;
+  flex: 1;
+  max-width: 600px;
+}
+
+.title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 20px var(--glow-shadow);
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.description {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 133%;
+  color: rgb(255, 255, 255);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .meetFlorkContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .imageWrapper {
+    width: 80%;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .title::before {
+    display: none;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+} 
