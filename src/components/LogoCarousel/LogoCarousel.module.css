@@ -2,8 +2,9 @@
   position: relative;
   width: 100%;
   height: 80px;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .movingBand {
@@ -11,8 +12,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  backdrop-filter: blur(21.85px);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .carouselSection {
@@ -28,16 +28,24 @@
     rgb(0, 0, 0) 87.5%,
     rgba(0, 0, 0, 0) 100%
   );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .carouselList {
   display: flex;
   width: max-content;
-  gap: 60px;
+  gap: 30px;
   margin: 0;
   padding: 0;
   list-style: none;
   animation: scroll 30s linear infinite;
+  align-items: center;
 }
 
 .carouselItem {
@@ -46,7 +54,6 @@
   flex-shrink: 0;
   opacity: 0.7;
   transition: opacity 0.3s ease;
-  height: 38px;
 }
 
 .carouselItem:hover {
@@ -58,6 +65,20 @@
   height: 38px;
   object-fit: contain;
   filter: brightness(0) invert(1);
+}
+
+.dotItem {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary-color, #8A6CFF);
+  opacity: 0.7;
 }
 
 @keyframes scroll {
@@ -75,11 +96,16 @@
   }
 
   .carouselList {
-    gap: 30px;
+    gap: 20px;
   }
   
   .logoImage {
     width: 120px;
     height: 28px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
   }
 } 
