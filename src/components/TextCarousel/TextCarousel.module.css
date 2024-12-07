@@ -15,7 +15,7 @@
 .staticBand {
   top: 0;
   background-color: rgba(138, 108, 255, 0.3); /* Color morado más oscuro */
-  transform: rotate(2deg);
+  transform: rotate(-2deg);
 }
 
 .movingBand {
@@ -36,7 +36,7 @@
   width: 100%;
   height: 100%;
   align-items: center;
-  padding: 10px;
+  padding: 20px 10px;
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0) 0%,
