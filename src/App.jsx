@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import './styles/globals.css'
+import './styles/variables.css'
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -10,6 +11,7 @@ function App() {
     starPosition: { x: 0, y: 0 },
     mousePosition: { x: 0, y: 0 }
   })
+  const [theme, setTheme] = useState('purple')
 
   const config = {
     starAnimationDuration: 1500,
@@ -87,8 +89,29 @@ function App() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [last, createStar, createGlow])
 
+  const toggleTheme = () => {
+    const newTheme = theme === 'purple' ? 'orange' : 'purple'
+    setTheme(newTheme)
+    document.documentElement.setAttribute('data-theme', newTheme === 'orange' ? 'orange' : '')
+  }
+
   return (
     <div className="app-container">
+      <button 
+        onClick={toggleTheme}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          zIndex: 1000,
+          background: 'white',
+          padding: '10px 20px',
+          borderRadius: '20px',
+          cursor: 'pointer'
+        }}
+      >
+        Cambiar Tema
+      </button>
       <Header />
       <Hero />
     </div>

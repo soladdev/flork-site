@@ -1,0 +1,27 @@
+:root {
+  /* Tema Púrpura (Default) */
+  --primary-color: #8A6CFF;
+  --primary-light: #E2D1FF;
+  --primary-dark: #B088FF;
+  --text-gradient: linear-gradient(
+    to right,
+    #FFFFFF 0%,
+    #E2D1FF 50%,
+    #B088FF 100%
+  );
+  --glow-shadow: rgba(176, 136, 255, 0.4);
+}
+
+/* Tema Naranja */
+[data-theme="orange"] {
+  --primary-color: #FF8A3D;
+  --primary-light: #FFD1B0;
+  --primary-dark: #FF6B1A;
+  --text-gradient: linear-gradient(
+    to right,
+    #FFFFFF 0%,
+    #FFD1B0 50%,
+    #FF8A3D 100%
+  );
+  --glow-shadow: rgba(255, 138, 61, 0.4);
+} 
