@@ -1,6 +1,8 @@
 import styles from './Hero.module.css'
 import TextCarousel from '../TextCarousel/TextCarousel'
 import FlorkCharacter from '../FlorkCharacter/FlorkCharacter'
+import MeetFlork from '../MeetFlork/MeetFlork'
+import HowToBuy from '../HowToBuy/HowToBuy'
 
 const Hero = () => {
   return (
@@ -27,8 +29,9 @@ const Hero = () => {
         </div>
         <div className={styles.carouselWrapper}>
           <TextCarousel />
-          <br />
         </div>
+        <MeetFlork />
+        <HowToBuy />
       </div>
     </div>
   )
