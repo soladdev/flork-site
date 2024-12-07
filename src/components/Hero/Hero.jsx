@@ -18,7 +18,10 @@ const Hero = () => {
         />
       </div>
       <div className={styles.contentWrapper}>
-        <h1 className={styles.title}>WELCOME TO THE<br />FLORK'S WORLD</h1>
+        <h1 className={styles.title}>
+          <span className={styles.titlePart1}>WELCOME TO THE</span>
+          <span className={styles.titlePart2}>FLORK'S WORLD</span>
+        </h1>
         <div className={styles.characterWrapper}>
           <FlorkCharacter />
         </div>
