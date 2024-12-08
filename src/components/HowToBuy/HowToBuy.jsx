@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styles from './HowToBuy.module.css'
 import metamask from '../../assets/images/metamask.svg'
 import coinbase from '../../assets/images/coinbase.svg'
@@ -128,7 +129,20 @@ const Arrow2 = () => (
 
 const HowToBuy = () => {
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ 
+        duration: 1,
+        scale: {
+          type: "spring",
+          damping: 15,
+          stiffness: 100
+        }
+      }}
+      viewport={{ once: true, amount: 0.5 }}
+    >
       <h2 className={styles.title}>How to buy</h2>
       
       <div className={styles.cardsContainer}>
@@ -153,7 +167,7 @@ const HowToBuy = () => {
           rotation={21} 
         />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styles from './Hero.module.css'
 import TextCarousel from '../TextCarousel/TextCarousel'
 import FlorkCharacter from '../FlorkCharacter/FlorkCharacter'
@@ -38,10 +39,31 @@ const Hero = () => {
         </div>
         <MeetFlork />
         <HowToBuy />
-        <FlorkWantsYou />
-        <ContractInfo />
-        <Florkonomics />
-        <FlorkWaiting />
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <FlorkWantsYou />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <ContractInfo />
+        </motion.div>
+          <Florkonomics />
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <FlorkWaiting />
+        </motion.div>
       </div>
     </div>
   )
