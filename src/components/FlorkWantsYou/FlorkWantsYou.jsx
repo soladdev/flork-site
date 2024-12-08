@@ -30,7 +30,7 @@ const FlorkWantsYou = () => {
                   fontFamily="Clash Display"
                   fontWeight="700"
                   letterSpacing="0.02em"
-                  textTransform="uppercase"
+                  style={{ textTransform: 'uppercase' }}
                 >
                   Follow me on x
                 </text>
@@ -72,7 +72,7 @@ const FlorkWantsYou = () => {
                   fontFamily="Clash Display"
                   fontWeight="700"
                   letterSpacing="0.02em"
-                  textTransform="uppercase"
+                  style={{ textTransform: 'uppercase' }}
                 >
                   Join my telegram
                 </text>
