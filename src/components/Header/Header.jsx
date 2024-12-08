@@ -114,7 +114,7 @@ const Header = () => {
 
         {/* Sección derecha */}
         <div className={styles.rightSection}>
-          <a 
+          {/* <a 
             className={styles.bitMartButton}
             href="https://support.bitmart.com/hc/en-us/articles/27510030800283" 
             target="_blank" 
@@ -124,7 +124,7 @@ const Header = () => {
               src="https://framerusercontent.com/images/YkBCozgO5oFcd8GOeoazv2qIg.png"
               alt="BitMart Logo"
             />
-          </a>
+          </a> */}
           <a 
             className={styles.buyButton}
             href="#" 
@@ -148,10 +148,10 @@ const Header = () => {
         <a className={styles.mobileMenuItem} href="https://twitter.com/HeyFlork">
           <TwitterIcon /> Follow us on X
         </a>
-        <a className={styles.mobileMenuItem} href="https://support.bitmart.com/hc/en-us/articles/27510030800283">
+        {/* <a className={styles.mobileMenuItem} href="https://support.bitmart.com/hc/en-us/articles/27510030800283">
           <img src="https://framerusercontent.com/images/YkBCozgO5oFcd8GOeoazv2qIg.png" alt="BitMart" />
           Bitmart
-        </a>
+        </a> */}
         <a className={styles.mobileMenuItem} href="https://www.instagram.com/heyflork/">
           <InstagramIcon /> Follow us on Instagram
         </a>
