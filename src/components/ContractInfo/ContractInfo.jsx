@@ -35,7 +35,7 @@ const ContractInfo = () => {
 
           <div className={styles.buttonContainer}>
             <a 
-              href="https://etherscan.io/token/0xdb0238975ce84f89212ffa56c64c0f2b47f8f153" 
+              href="#" 
               target="_blank" 
               rel="noopener"
               className={styles.button}
@@ -43,7 +43,7 @@ const ContractInfo = () => {
               SOLSCAN CONTRACT
             </a>
             <a 
-              href="https://etherscan.io/tx/0xaa1d9daf8faeabddf992407e1962f8ae8adf5ef18811d1779422c02b77aee281" 
+              href="#" 
               target="_blank" 
               rel="noopener"
               className={styles.button}
