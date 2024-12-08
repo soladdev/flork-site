@@ -98,7 +98,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <button 
+      {/* <button 
         onClick={toggleTheme}
         style={{
           position: 'fixed',
@@ -112,7 +112,7 @@ function App() {
         }}
       >
         Cambiar Tema
-      </button>
+      </button> */}
       <AudioPlayer />
       <Header />
       <Hero />
