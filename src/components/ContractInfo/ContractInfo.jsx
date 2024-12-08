@@ -1,7 +1,7 @@
 import styles from './ContractInfo.module.css'
 
 const ContractInfo = () => {
-  const contractAddress = "0xdb0238975ce84f89212ffa56c64c0f2b47f8f153"
+  const contractAddress = "Comming soon"
   
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress)
@@ -11,7 +11,7 @@ const ContractInfo = () => {
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
         <h2 className={styles.title}>
-          Powered by ethereum network
+          Powered by solana network
         </h2>
         
         <div className={styles.contractSection}>
@@ -39,7 +39,7 @@ const ContractInfo = () => {
               rel="noopener"
               className={styles.button}
             >
-              ETHERSCAN CONTRACT
+              SOLSCAN CONTRACT
             </a>
             <a 
               href="https://etherscan.io/tx/0xaa1d9daf8faeabddf992407e1962f8ae8adf5ef18811d1779422c02b77aee281" 
@@ -47,7 +47,7 @@ const ContractInfo = () => {
               rel="noopener"
               className={styles.button}
             >
-              CONTRACT RENOUNCED
+              BUY FLORK
             </a>
           </div>
         </div>
