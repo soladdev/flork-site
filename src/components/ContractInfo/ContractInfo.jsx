@@ -1,4 +1,5 @@
 import styles from './ContractInfo.module.css'
+import img from '../../assets/images/a4.avif'
 
 const ContractInfo = () => {
   const contractAddress = "Comming soon"
@@ -55,7 +56,7 @@ const ContractInfo = () => {
 
       <div className={styles.imageWrapper}>
         <img
-          src="https://framerusercontent.com/images/dDGOioxO45gIhGDjbFSTRZsLuSo.png"
+          src={img}
           alt="Flork Car"
           className={styles.florkImage}
         />

@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion'
 import styles from './HowToBuy.module.css'
-import metamask from '../../assets/images/metamask.svg'
-import coinbase from '../../assets/images/coinbase.svg'
-import ethereum from '../../assets/images/ethereum.svg'
-import electrum from '../../assets/images/electrum.svg'
-import uniswap from '../../assets/images/smarter.avif'
+import phantom from '../../assets/images/phantom.png'
+import solana from '../../assets/images/solana.png'
+import PumpFun from '../../assets/images/pumpfunlogo.webp'
 import { useState } from 'react'
 
 const getContainerClass = (title, index) => {
@@ -47,8 +45,8 @@ const Card = ({ step, title, icon, rotation }) => {
       if (index === 1) return styles.coinbaseIcon;
       return styles.electrumIcon;
     }
-    if (title === "Get Some Eth") {
-      return styles.ethereumIcon;
+    if (title === "Get Some SOL") {
+      return styles.solanaIcon;
     }
     return styles.uniswapIcon;
   }
@@ -149,21 +147,21 @@ const HowToBuy = () => {
         <Card 
           step="1" 
           title="Create a Wallet" 
-          icon={[metamask, coinbase, electrum]} 
+          icon={[phantom]} 
           rotation={21} 
         />
         <Arrow />
         <Card 
           step="2" 
-          title="Get Some Eth" 
-          icon={ethereum} 
+          title="Get Some SOL" 
+          icon={solana} 
           rotation={-21} 
         />
         <Arrow2 />
         <Card 
           step="3" 
-          title="Go to Uniswap" 
-          icon={uniswap} 
+          title="Go to PUMP.FUN" 
+          icon={PumpFun} 
           rotation={21} 
         />
       </div>

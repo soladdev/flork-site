@@ -1,5 +1,5 @@
 import styles from './FlorkWantsYou.module.css'
-
+import img from '../../assets/images/a3.avif'
 const FlorkWantsYou = () => {
   return (
     <div className={styles.container}>
@@ -12,7 +12,7 @@ const FlorkWantsYou = () => {
 
         <div className={styles.buttonsContainer}>
           <a 
-            href="https://twitter.com/HeyFlork" 
+            href="https://x.com/florkcto" 
             target="_blank" 
             rel="noopener"
             className={`${styles.button} ${styles.presaleButton}`}
@@ -54,7 +54,7 @@ const FlorkWantsYou = () => {
             </svg>
           </a>
           <a 
-            href="https://t.me/HeyFlork" 
+            href="https://t.me/florkcommunity" 
             target="_blank" 
             rel="noopener"
             className={`${styles.button} ${styles.presaleButton}`}
@@ -100,7 +100,7 @@ const FlorkWantsYou = () => {
 
       <div className={styles.imageWrapper}>
         <img
-          src="https://framerusercontent.com/images/oathS0hhRPIKhdybtl3wBnItOeA.png?scale-down-to=1024"
+          src={img}
           alt="Flork Character"
           className={styles.florkImage}
         />

@@ -1,5 +1,5 @@
 import styles from './FlorkWaiting.module.css'
-
+import img from '../../assets/images/a6.avif'
 const FlorkWaiting = () => {
   return (
     <div className={styles.container}>
@@ -9,7 +9,7 @@ const FlorkWaiting = () => {
           Join him on the couch and let's make some moves
         </p>
         <a 
-          href="https://app.uniswap.org/explore/tokens/ethereum/0xdb0238975ce84f89212ffa56c64c0f2b47f8f153" 
+          href="#" 
           target="_blank"
           rel="noopener"
           className={styles.buyButton}
@@ -23,11 +23,11 @@ const FlorkWaiting = () => {
           decoding="async"
           loading="lazy"
           sizes="594px"
-          srcSet="https://framerusercontent.com/images/ieRvnXrSpYiHuXfHufDrFjdNW0g.png?scale-down-to=512 512w,
-                  https://framerusercontent.com/images/ieRvnXrSpYiHuXfHufDrFjdNW0g.png?scale-down-to=1024 1024w,
-                  https://framerusercontent.com/images/ieRvnXrSpYiHuXfHufDrFjdNW0g.png?scale-down-to=2048 2048w,
-                  https://framerusercontent.com/images/ieRvnXrSpYiHuXfHufDrFjdNW0g.png 2380w"
-          src="https://framerusercontent.com/images/ieRvnXrSpYiHuXfHufDrFjdNW0g.png"
+          srcSet={`${img}?scale-down-to=512 512w,
+                  ${img}?scale-down-to=1024 1024w,
+                  ${img}?scale-down-to=2048 2048w,
+                  ${img} 2380w`}
+          src={img}
           alt="Flork resting"
         />
       </div>

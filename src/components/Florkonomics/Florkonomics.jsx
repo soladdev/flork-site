@@ -1,4 +1,5 @@
 import styles from './Florkonomics.module.css'
+import img from '../../assets/images/a5.avif'
 
 const Florkonomics = () => {
   return (
@@ -9,11 +10,11 @@ const Florkonomics = () => {
             className={styles.speakerImage}
             decoding="async"
             sizes="648px"
-            srcSet="https://framerusercontent.com/images/vMLlKZOC7Ycum7b9gFkTondKW0.png?scale-down-to=512 512w,
-                    https://framerusercontent.com/images/vMLlKZOC7Ycum7b9gFkTondKW0.png?scale-down-to=1024 1024w,
-                    https://framerusercontent.com/images/vMLlKZOC7Ycum7b9gFkTondKW0.png?scale-down-to=2048 2048w,
-                    https://framerusercontent.com/images/vMLlKZOC7Ycum7b9gFkTondKW0.png 2589w"
-            src="https://framerusercontent.com/images/vMLlKZOC7Ycum7b9gFkTondKW0.png"
+            srcSet={`${img}?scale-down-to=512 512w,
+                    ${img}?scale-down-to=1024 1024w,
+                    ${img}?scale-down-to=2048 2048w,
+                    ${img} 2589w`}
+            src={img}
             alt="Speaker"
           />
         </div>

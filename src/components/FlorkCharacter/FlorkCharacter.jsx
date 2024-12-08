@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import styles from './FlorkCharacter.module.css'
+import a1 from '../../assets/images/a1.avif'
+
 
 const FlorkCharacter = () => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 })
@@ -57,11 +59,11 @@ const FlorkCharacter = () => {
           className={styles.characterImage}
           decoding="async"
           sizes="634px"
-          srcSet="https://framerusercontent.com/images/dwofxlStjRy3rdhICoDJiBnZt4I.png?scale-down-to=512 512w,
-                  https://framerusercontent.com/images/dwofxlStjRy3rdhICoDJiBnZt4I.png?scale-down-to=1024 1024w,
-                  https://framerusercontent.com/images/dwofxlStjRy3rdhICoDJiBnZt4I.png?scale-down-to=2048 2048w,
-                  https://framerusercontent.com/images/dwofxlStjRy3rdhICoDJiBnZt4I.png 2940w"
-          src="https://framerusercontent.com/images/dwofxlStjRy3rdhICoDJiBnZt4I.png"
+          srcSet={`${a1}?scale-down-to=512 512w,
+                  ${a1}?scale-down-to=1024 1024w,
+                  ${a1}?scale-down-to=2048 2048w,
+                  ${a1} 2940w`}
+          src={a1}
           alt="Flork Character"
         />
       </div>

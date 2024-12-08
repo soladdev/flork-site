@@ -26,7 +26,7 @@ const Header = () => {
         <div className={styles.leftSection}>
           <a 
             className={styles.socialIcon} 
-            href="https://twitter.com/HeyFlork" 
+            href="https://x.com/florkcto" 
             target="_blank" 
             rel="noopener noreferrer"
           >
@@ -34,7 +34,7 @@ const Header = () => {
           </a>
           <a 
             className={styles.socialIcon} 
-            href="https://t.me/HeyFlork" 
+            href="https://t.me/florkcommunity" 
             target="_blank" 
             rel="noopener noreferrer"
           >
@@ -127,7 +127,7 @@ const Header = () => {
           </a>
           <a 
             className={styles.buyButton}
-            href="https://app.uniswap.org/explore/tokens/ethereum/0xdb0238975ce84f89212ffa56c64c0f2b47f8f153" 
+            href="#" 
             target="_blank"
           >
             Buy Flork
@@ -142,7 +142,7 @@ const Header = () => {
           onClick={toggleMenu}
           aria-label="Cerrar menú"
         />
-        <a className={styles.mobileMenuItem} href="https://app.uniswap.org/explore/tokens/ethereum/0xdb0238975ce84f89212ffa56c64c0f2b47f8f153">
+        <a className={styles.mobileMenuItem} href="#">
           Buy Flork
         </a>
         <a className={styles.mobileMenuItem} href="https://twitter.com/HeyFlork">

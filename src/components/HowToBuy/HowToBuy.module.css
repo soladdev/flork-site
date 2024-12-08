@@ -205,7 +205,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(97%, 65%);
+  transform: translate(50%, 39%);
 }
 
 .coinbaseContainer {
@@ -231,12 +231,12 @@
 
 .metamaskIcon {
   background: white;
-  width: 70px;
-  height: 70px;
-  padding: 11px;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
   border-radius: 27%;
   transform: rotate(-20deg);
-  box-shadow: 0px 0px 10px 0px rgb(250, 115, 62);
+  box-shadow: 0px 0px 10px 0px rgb(62, 206, 250);
 }
 
 .coinbaseIcon {
@@ -252,7 +252,7 @@
   background: white;
   width: 100px;
   height: 100px;
-  padding: 11px;
+  padding: 5px;
   border-radius: 50%;
   box-shadow: 0px 0px 25px 0px rgb(127 99 234);
 }
@@ -261,8 +261,9 @@
   background: white;
   width: 100px;
   height: 100px;
-  padding: 11px;
-  border-radius: 27%;
+  padding: 10px;
+  border-radius: 33%;
+  box-shadow: 0px 0px 25px 0px rgb(99, 234, 144);
 }
 
 .electrumContainer {
@@ -279,6 +280,15 @@
   padding: 5px;
   border-radius: 27%;
   box-shadow: 0px 0px 5px 0px rgb(0, 195, 255);
+}
+
+.solanaIcon {
+  background: white;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 25px 0px rgb(29, 14, 244);
 }
 
 @media (max-width: 768px) {

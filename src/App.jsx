@@ -101,12 +101,11 @@ function App() {
       <button 
         onClick={toggleTheme}
         style={{
-          display: 'none',
           position: 'fixed',
           bottom: '20px',
-          right: '20px',
-          zIndex: 1000,
-          background: 'white',
+          left: '20px',
+          zIndex: '1000',
+          background: '#007ae5',
           padding: '10px 20px',
           borderRadius: '20px',
           cursor: 'pointer'
