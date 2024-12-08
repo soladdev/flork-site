@@ -135,21 +135,69 @@
     flex-direction: column;
     text-align: center;
     padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .contentWrapper {
+    max-width: 100%;
   }
 
   .title {
-    font-size: 28px;
+    font-size: 24px;
+    text-align: center;
   }
 
   .contractTitle {
-    font-size: 24px;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .addressContainer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 15px;
+  }
+
+  .copyButton {
+    width: 100%;
+    font-size: 18px;
+    height: 40px;
   }
 
   .buttonContainer {
     flex-direction: column;
   }
 
+  .button {
+    padding: 15px 0px;
+    font-size: 16px;
+  }
+
   .address {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .contractTitle {
+    font-size: 18px;
+  }
+
+  .address {
+    font-size: 14px;
+  }
+
+  .copyButton {
     font-size: 16px;
   }
 } 

@@ -1,12 +1,12 @@
 .audioContainer {
   position: fixed;
-  bottom: 60px;
-  right: 70px;
+  bottom: clamp(20px, 5vw, 60px);
+  right: clamp(20px, 5vw, 70px);
   z-index: 1000;
-  width: 150px;
-  height: 150px;
+  width: clamp(100px, 15vw, 150px);
+  height: clamp(100px, 15vw, 150px);
   background: rgb(124, 97, 230);
-  padding: 15px;
+  padding: clamp(10px, 1.5vw, 15px);
   border-radius: 50%;
   display: flex;
   justify-content: center;
