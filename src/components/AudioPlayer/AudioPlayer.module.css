@@ -1,13 +1,13 @@
 .audioContainer {
   position: fixed;
-  bottom: 20px;
-  right: 100px; /* Ajustado para dar espacio al botón de cambiar tema */
+  bottom: 60px;
+  right: 70px;
   z-index: 1000;
-  width: 46px;
-  height: 46px;
+  width: 150px;
+  height: 150px;
   background: rgb(124, 97, 230);
   padding: 15px;
-  border-radius: 62px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;

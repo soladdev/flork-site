@@ -101,6 +101,7 @@ function App() {
       <button 
         onClick={toggleTheme}
         style={{
+          display: 'none',
           position: 'fixed',
           bottom: '20px',
           right: '20px',
