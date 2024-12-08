@@ -1,0 +1,155 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.contentWrapper {
+  flex: 1;
+  max-width: 600px;
+}
+
+.title {
+  text-align: left;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 20px var(--glow-shadow);
+}
+
+.contractTitle {
+  text-align: left;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 20px var(--glow-shadow);
+}
+
+.addressContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: rgba(35, 14, 116, 0.5);
+  border: 1px solid rgba(138, 108, 255, 0.3);
+  border-radius: 18px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.addressWrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+.address {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  margin: 0;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 20px var(--glow-shadow);
+}
+
+.copyButton {
+  flex-shrink: 0;
+  padding: 0 20px;
+  height: 44px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  flex: 1;
+  text-align: center;
+  padding: 20px 0px;
+  background: radial-gradient(74.64% 74.64% at 17.11% 76.36%, #BCABFF 0%, #FFFFFF 44.5%, #9D85FB 100%);
+  border-radius: 18px;
+  color: #230E74;
+  text-decoration: none;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper {
+  flex: 1;
+  max-width: 440px;
+}
+
+.florkImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .contractTitle {
+    font-size: 24px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+  }
+
+  .address {
+    font-size: 16px;
+  }
+} 

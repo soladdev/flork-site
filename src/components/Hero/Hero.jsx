@@ -3,6 +3,11 @@ import TextCarousel from '../TextCarousel/TextCarousel'
 import FlorkCharacter from '../FlorkCharacter/FlorkCharacter'
 import MeetFlork from '../MeetFlork/MeetFlork'
 import HowToBuy from '../HowToBuy/HowToBuy'
+import FlorkWantsYou from '../FlorkWantsYou/FlorkWantsYou'
+import ContractInfo from '../ContractInfo/ContractInfo'
+import Florkonomics from '../Florkonomics/Florkonomics'
+import FlorkWaiting from '../FlorkWaiting/FlorkWaiting'
+
 
 const Hero = () => {
   return (
@@ -32,6 +37,10 @@ const Hero = () => {
         </div>
         <MeetFlork />
         <HowToBuy />
+        <FlorkWantsYou />
+        <ContractInfo />
+        <Florkonomics />
+        <FlorkWaiting />
       </div>
     </div>
   )
