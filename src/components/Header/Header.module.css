@@ -11,12 +11,12 @@
   z-index: 10;
 }
 
-.socialLinks {
+.leftSection {
   display: flex;
   gap: 10px;
 }
 
-.socialLink {
+.socialIcon {
   width: 53px;
   height: 53px;
   display: flex;
@@ -30,75 +30,16 @@
   overflow: hidden;
 }
 
-.socialLink:hover {
+.socialIcon:hover {
   opacity: 0.8;
 }
 
-.socialLink svg {
+.socialIcon svg {
   width: 100%;
   height: 100%;
 }
 
-.bitMartButton {
-  width: 53px;
-  height: 53px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  transition: opacity 0.2s ease;
-  border: 0.5px solid black;
-  overflow: hidden;
-  padding: 8px;
-}
-
-.bitMartButton img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
-
-.bitMartButton:hover {
-  opacity: 0.8;
-}
-
-.rightSection {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.buyButton {
-  background: white;
-  padding: 12px 35px;
-  border-radius: 83px;
-  text-decoration: none;
-  color: rgb(138, 108, 255);
-  font-family: 'Clash Display', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-  box-shadow: 0px 4px 13.8px rgba(0, 0, 0, 0.25);
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  height: 53px;
-}
-
-.logoContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  width: 112px;
-  height: 48px;
-  color: #fff; /* o el color que prefieras */
-}
-
+/* Estilos del logo central */
 .centerLogo {
   position: absolute;
   left: 50%;
@@ -149,12 +90,6 @@
   margin: 0;
 }
 
-.logoFront svg {
-  width: 100%;
-  height: 100%;
-  fill: white;
-}
-
 .logoSvg {
   width: 112px;
   height: 48px;
@@ -162,35 +97,251 @@
   fill: none;
 }
 
-.logoFront {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+/* Resto de los estilos existentes */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bitMartButton {
+  width: 53px;
+  height: 53px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  border: 0.5px solid black;
+  overflow: hidden;
+  padding: 8px;
 }
 
-.logoFront svg path {
-  stroke: white;
-  fill: none;
-}
-
-.logoFront svg rect {
-  fill: white;
-}
-
-.logoBack {
-  position: absolute;
+.bitMartButton img {
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  object-fit: contain;
+  object-position: center;
+}
+
+.bitMartButton:hover {
+  opacity: 0.8;
+}
+
+.buyButton {
+  background: white;
+  padding: 12px 35px;
+  border-radius: 83px;
+  text-decoration: none;
+  color: rgb(138, 108, 255);
+  font-family: 'Clash Display', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  box-shadow: 0px 4px 13.8px rgba(0, 0, 0, 0.25);
+  border: 1px solid black;
   display: flex;
   align-items: center;
-  justify-content: center;
+  height: 53px;
+}
+
+/* Media queries para responsividad */
+@media screen and (max-width: 768px) {
+  .leftSection,
+  .rightSection,
+  .centerLogo {
+    display: none;
+  }
+  
+  .menuButton {
+    display: block !important;
+  }
+
+  .headerContainer {
+    margin: 0;
+    padding: 20px;
+    position: fixed;
+    background: transparent;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .menuButton {
+    display: none;
+  }
+}
+
+.menuButton {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  transform: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 15px;
+  width: 45px;
+  height: 45px;
+}
+
+.line {
+  display: block;
+  width: 25px;
+  height: 2px;
   background-color: white;
-  transform: rotateY(180deg);
-  border-radius: 11px;
-} 
+  margin: 6px 0;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.menuButton.open .line.top {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuButton.open .line.bottom {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Estilos para el menú móvil */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(16, 9, 44);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.mobileMenu.open {
+  transform: translateY(0);
+}
+
+.mobileMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.11);
+  width: 80%;
+  max-width: 300px;
+  transition: background-color 0.3s ease;
+}
+
+.mobileMenuItem:first-child {
+  background-color: white;
+  color: rgb(138, 108, 255);
+  border-radius: 83px;
+  box-shadow: 0px 4px 13.8px rgba(0, 0, 0, 0.25);
+  border: 1px solid black;
+}
+
+.mobileMenuItem img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.mobileMenuItem svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* Icono circular para redes sociales */
+.socialIcon {
+  width: 53px;
+  height: 53px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+/* Botón de cierre actualizado */
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.11);
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1002;
+}
+
+.closeButton::before,
+.closeButton::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.closeButton::before {
+  transform: rotate(45deg);
+}
+
+.closeButton::after {
+  transform: rotate(-45deg);
+}
+
+.closeButton:hover::before,
+.closeButton:hover::after {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 10px;
+}
+
+.socialLink {
+  width: 53px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: white;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  border: 0.5px solid black;
+  overflow: hidden;
+}
+
+.socialLink:hover {
+  opacity: 0.8;
+}
+
+.socialLink svg {
+  width: 100%;
+  height: 100%;
+}
+ 
