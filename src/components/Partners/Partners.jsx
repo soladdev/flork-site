@@ -22,17 +22,20 @@ const Partners = () => {
   const [position, setPosition] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const sliderRef = useRef(null);
-  const repeatedPartners = [...partners, ...partners, ...partners];
+  // Creamos más copias para asegurar un desplazamiento continuo
+  const repeatedPartners = [...partners, ...partners, ...partners, ...partners];
 
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
 
+    const itemWidth = slider.firstElementChild?.offsetWidth || 0;
+    const gap = 60;
+    const singleSetWidth = (itemWidth + gap) * partners.length;
+    
+    // Comenzamos desde la segunda copia para tener espacio para desplazar en ambas direcciones
     if (position === 0) {
-      const itemWidth = slider.firstElementChild?.offsetWidth || 0;
-      const gap = 60;
-      const totalWidth = (itemWidth + gap) * partners.length;
-      setPosition(-totalWidth);
+      setPosition(-singleSetWidth);
     }
 
     const moveSlider = () => {
@@ -40,12 +43,10 @@ const Partners = () => {
 
       setPosition(prev => {
         const newPosition = prev - 1;
-        const itemWidth = slider.firstElementChild?.offsetWidth || 0;
-        const gap = 60;
-        const totalWidth = (itemWidth + gap) * partners.length;
-
-        if (Math.abs(newPosition) >= totalWidth * 2) {
-          return -totalWidth;
+        
+        // Cuando llegamos al final de la segunda copia, volvemos a la posición inicial
+        if (Math.abs(newPosition) >= singleSetWidth * 2) {
+          return -singleSetWidth;
         }
         return newPosition;
       });
