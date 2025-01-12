@@ -1,7 +1,7 @@
 .logoCarouselContainer {
   position: relative;
   width: 100%;
-  height: 80px;
+  height: 120px;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -12,92 +12,69 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-top: 1px solid rgba(138, 108, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(138, 108, 255, 0.3);
-  transition: all 0.3s ease;
+  border-top: 1px solid rgba(47, 186, 255, 0.3);
+  border-bottom: 1px solid rgba(47, 186, 255, 0.3);
+  background: linear-gradient(90deg, 
+    rgba(47, 186, 255, 0.05) 0%,
+    rgba(24, 33, 44, 0.05) 100%
+  );
 }
-
-
 
 .carouselSection {
   display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
-  padding: 20px 10px;
-  mask-image: linear-gradient(to right,
-          rgba(0, 0, 0, 0) 0%,
-          rgb(0, 0, 0) 12.5%,
-          rgb(0, 0, 0) 87.5%,
-          rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to right,
-          rgba(0, 0, 0, 0) 0%,
-          rgb(0, 0, 0) 12.5%,
-          rgb(0, 0, 0) 87.5%,
-          rgba(0, 0, 0, 0) 100%);
-          --border-bottom-width: 0.5px;
-  --border-color: #ffffff;
-  --border-left-width: 0.5px;
-  --border-right-width: 0.5px;
-  --border-style: solid;
-  --border-top-width: 0.5px;
-  backdrop-filter: blur(8px);
-
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 .carouselList {
   display: flex;
   width: max-content;
-  gap: 30px;
   margin: 0;
   padding: 0;
   list-style: none;
-  animation: scroll 15s linear infinite;
   align-items: center;
+  gap: 60px;
+  transition: transform 0.1s linear;
 }
 
 .carouselItem {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  padding: 10px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .carouselItem:hover {
-  opacity: 1;
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(47, 186, 255, 0.2);
 }
 
 .logoImage {
-  width: 163px;
-  height: 38px;
+  width: 180px;
+  height: 60px;
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
 
-@keyframes scroll {
-  0% {
-      transform: translateX(0);
-  }
-
-  100% {
-      transform: translateX(-50%);
-  }
-}
-
 @media (max-width: 768px) {
   .logoCarouselContainer {
-      height: 60px;
+    height: 100px;
   }
 
   .carouselList {
-      gap: 20px;
+    gap: 40px;
   }
 
   .logoImage {
-      width: 120px;
-      height: 28px;
+    width: 140px;
+    height: 45px;
   }
 }
 

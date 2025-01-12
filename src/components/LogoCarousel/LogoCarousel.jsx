@@ -92,7 +92,7 @@ const LogoCarousel = () => {
         <div className={styles.carouselSection}>
           <ul className={styles.carouselList}>
             {repeatedLogos.map((logo, index) => (
-              <li key={`carousel-item-${index}`}>
+              <li style={{height: '100px', overflow: 'hidden'}} key={`carousel-item-${index}`}>
                 <div className={styles.carouselItem}>
                   {logo.component ? (
                     logo.component
@@ -104,11 +104,6 @@ const LogoCarousel = () => {
                     />
                   )}
                 </div>
-                {index < repeatedLogos.length - 1 && (
-                  <div className={styles.separator}>
-                    <Separator />
-                  </div>
-                )}
               </li>
             ))}
           </ul>
