@@ -1,25 +1,19 @@
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 20px;
-  max-width: 1200px;
+  padding: 20px;
+  width: 100%;
   margin: 0 auto;
-  gap: 40px;
-}
-
-.contentWrapper {
-  flex: 1;
-  max-width: 600px;
+  position: relative;
+  background: var(--primary-dark);
 }
 
 .title {
-  text-align: left;
-  font-family: 'Clash Display', sans-serif;
-  font-size: 30px;
+  opacity: 1;
+  text-align: center;
+  font-family: var(--font-comic);
+  font-size: 50px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   background: var(--text-gradient);
   -webkit-background-clip: text;
   background-clip: text;
@@ -27,18 +21,33 @@
   text-shadow: 0px 4px 20px var(--glow-shadow);
 }
 
-.contractTitle {
-  text-align: left;
-  font-family: 'Clash Display', sans-serif;
-  font-size: 27px;
-  font-weight: 700;
-  text-transform: uppercase;
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.leftSection {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.imageWrapper {
   margin-bottom: 20px;
-  background: var(--text-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 4px 20px var(--glow-shadow);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.florkImage {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
 }
 
 .addressContainer {
@@ -46,11 +55,14 @@
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  background: rgba(35, 14, 116, 0.5);
-  border: 1px solid rgba(138, 108, 255, 0.3);
+  background: var(--primary-dark);
+  border: 1px solid var(--primary-light);
   border-radius: 18px;
   padding: 15px 20px;
-  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  width: calc(100% + 300px);
+  margin-left: -150px;
 }
 
 .addressWrapper {
@@ -60,8 +72,8 @@
 
 .address {
   font-family: 'Clash Display', sans-serif;
-  font-size: 24px;
-  font-weight: 900;
+  font-size: 20px;
+  font-weight: 700;
   color: white;
   margin: 0;
   background: var(--text-gradient);
@@ -76,128 +88,46 @@
   padding: 0 20px;
   height: 44px;
   border: none;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--primary-cursor);
   border-radius: 12px;
   cursor: pointer;
   font-family: 'Clash Display', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
+  color: var(--primary-light2);
   text-transform: uppercase;
   transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .copyButton:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.buttonContainer {
-  display: flex;
-  gap: 20px;
-}
-
-.button {
-  flex: 1;
-  text-align: center;
-  padding: 20px 0px;
-  background: radial-gradient(74.64% 74.64% at 17.11% 76.36%, #BCABFF 0%, #FFFFFF 44.5%, #9D85FB 100%);
-  border-radius: 18px;
-  color: #230E74;
-  text-decoration: none;
-  font-family: 'Clash Display', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.imageWrapper {
-  flex: 1;
-  max-width: 440px;
-}
-
-.florkImage {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  background: var(--primary-cursor2);
 }
 
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
-    gap: 20px;
+    padding: 15px;
   }
 
-  .contentWrapper {
+  .florkImage {
     max-width: 100%;
-  }
-
-  .title {
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .contractTitle {
-    font-size: 22px;
-    text-align: center;
   }
 
   .addressContainer {
-    flex-direction: column;
-    gap: 10px;
     padding: 12px 15px;
-  }
-
-  .copyButton {
-    width: 100%;
-    font-size: 18px;
-    height: 40px;
-  }
-
-  .buttonContainer {
-    flex-direction: column;
-  }
-
-  .button {
-    padding: 15px 0px;
-    font-size: 16px;
-  }
-
-  .address {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .imageWrapper {
-    max-width: 100%;
-    margin-top: 20px;
   }
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
   .title {
-    font-size: 20px;
-  }
-
-  .contractTitle {
     font-size: 18px;
+    margin-bottom: 20px;
   }
 
-  .address {
-    font-size: 14px;
-  }
-
-  .copyButton {
-    font-size: 16px;
+  .addressContainer {
+    padding: 10px;
   }
 } 

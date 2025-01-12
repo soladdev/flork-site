@@ -1,8 +1,8 @@
 import styles from './ContractInfo.module.css'
-import img from '../../assets/images/a4.avif'
+import img from '../../assets/images/flork_acostado.svg'
 
 const ContractInfo = () => {
-  const contractAddress = "Comming soon"
+  const contractAddress = "Comming Soon....."
   
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress)
@@ -10,13 +10,19 @@ const ContractInfo = () => {
 
   return (
     <div className={styles.container}>
+      <h2 className={styles.title}>
+        Powered by solana network Contract
+      </h2>
+      
       <div className={styles.contentWrapper}>
-        <h2 className={styles.title}>
-          Powered by solana network
-        </h2>
-        
-        <div className={styles.contractSection}>
-          <h3 className={styles.contractTitle}>Contract</h3>
+        <div className={styles.leftSection}>
+          <div className={styles.imageWrapper}>
+            <img
+              src={img}
+              alt="Flork"
+              className={styles.florkImage}
+            />
+          </div>
           
           <div className={styles.addressContainer}>
             <div className={styles.addressWrapper}>
@@ -32,34 +38,7 @@ const ContractInfo = () => {
               COPY
             </button>
           </div>
-
-          <div className={styles.buttonContainer}>
-            <a 
-              href="#" 
-              target="_blank" 
-              rel="noopener"
-              className={styles.button}
-            >
-              SOLSCAN CONTRACT
-            </a>
-            <a 
-              href="#" 
-              target="_blank" 
-              rel="noopener"
-              className={styles.button}
-            >
-              BUY FLORK
-            </a>
-          </div>
         </div>
-      </div>
-
-      <div className={styles.imageWrapper}>
-        <img
-          src={img}
-          alt="Flork Car"
-          className={styles.florkImage}
-        />
       </div>
     </div>
   )

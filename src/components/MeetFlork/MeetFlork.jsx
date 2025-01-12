@@ -1,6 +1,6 @@
 import styles from './MeetFlork.module.css'
 import LogoCarousel from '../LogoCarousel/LogoCarousel'
-import img from '../../assets/images/a2.avif'
+import img from '../../assets/images/new/meet_flork.svg'
 import { useRef, useEffect } from 'react'
 
 const MeetFlork = () => {
