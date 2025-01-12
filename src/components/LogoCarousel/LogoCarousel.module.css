@@ -41,8 +41,9 @@
   transition: transform 0.1s linear;
 }
 
-.carouselItem {
+.carouselList li {
   display: flex;
+  height: 80px !important;
   align-items: center;
   padding: 10px;
   transition: all 0.3s ease;
@@ -50,9 +51,8 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
-.carouselItem:hover {
+.carouselList li:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(47, 186, 255, 0.2);
 }
 
