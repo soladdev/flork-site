@@ -1,11 +1,15 @@
 import styles from './ContractInfo.module.css'
-import img from '../../assets/images/flork_acostado.svg'
+import img from '../../assets/images/new/flork_acostado.svg'
+import { useState } from 'react'
 
 const ContractInfo = () => {
-  const contractAddress = "Comming Soon....."
+  const contractAddress = "0x0000000000000000000000000000000000000000"
+  const [isCopied, setIsCopied] = useState(false)
   
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress)
+    setIsCopied(true)
+    setTimeout(() => setIsCopied(false), 2000)
   }
 
   return (
@@ -24,7 +28,7 @@ const ContractInfo = () => {
             />
           </div>
           
-          <div className={styles.addressContainer}>
+          <div className={`${styles.addressContainer} ${isCopied ? styles.copied : ''}`}>
             <div className={styles.addressWrapper}>
               <p className={styles.address}>
                 {contractAddress}
@@ -39,6 +43,10 @@ const ContractInfo = () => {
             </button>
           </div>
         </div>
+      </div>
+      
+      <div className={`${styles.tooltip} ${isCopied ? styles.show : ''}`}>
+        ¡Copiado al portapapeles!
       </div>
     </div>
   )
