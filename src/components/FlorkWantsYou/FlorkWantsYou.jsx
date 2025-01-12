@@ -1,5 +1,5 @@
 import styles from './FlorkWantsYou.module.css'
-import img from '../../assets/images/a3.avif'
+import img from '../../assets/images/new/flork_celular.svg'
 import { useRef } from 'react'
 
 const FlorkWantsYou = () => {
