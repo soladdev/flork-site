@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import styles from './AIAgent.module.css'
-import florkImage from '../../assets/images/1.png'
+import florkImage from '../../assets/images/new/flork_ai.svg'
 import flechaImage from '../../assets/images/flecha.svg'
 import flecha2Image from '../../assets/images/flecha2.svg'
 import gsap from 'gsap'

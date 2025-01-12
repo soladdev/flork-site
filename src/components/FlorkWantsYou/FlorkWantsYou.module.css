@@ -136,7 +136,8 @@
 
 .imageWrapper {
   flex: 1;
-  max-width: 500px;
+  max-width: 290px;
+  margin: 0 40px;
 }
 
 .florkImage {
