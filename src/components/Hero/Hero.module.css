@@ -2,7 +2,7 @@
   min-height: 100vh;
   width: 100%;
   position: relative;
-  background-color: #000000;
+  background-color: var(--primary-color);
   will-change: transform;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .title {
-  font-family: 'Clash Display', sans-serif;
+  font-family: var(--font-comic);
   font-weight: 900;
   text-align: center;
   line-height: 1;

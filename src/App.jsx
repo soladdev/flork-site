@@ -1,11 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
-import AudioPlayer from './components/AudioPlayer/AudioPlayer'
+import Preloader from './components/Preloader/Preloader'
 import './styles/globals.css'
 import './styles/variables.css'
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [last, setLast] = useState({
     starTimestamp: 0,
@@ -90,6 +91,15 @@ function App() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [last, createStar, createGlow])
 
+  useEffect(() => {
+    // Simular tiempo de carga
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const toggleTheme = () => {
     const newTheme = theme === 'purple' ? 'orange' : 'purple'
     setTheme(newTheme)
@@ -98,24 +108,14 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* <button 
-        onClick={toggleTheme}
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          left: '20px',
-          zIndex: '1000',
-          background: '#007ae5',
-          padding: '10px 20px',
-          borderRadius: '20px',
-          cursor: 'pointer'
-        }}
-      >
-        Cambiar Tema
-      </button> */}
-      <AudioPlayer />
-      <Header />
-      <Hero />
+      {loading ? (
+        <Preloader />
+      ) : (
+        <>
+          <Header />
+          <Hero />
+        </>
+      )}
     </div>
   )
 }

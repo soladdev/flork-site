@@ -1,5 +1,37 @@
 :root {
   /* Tema Púrpura (Default) */
+  /* --primary-color: #8A6CFF;
+  --primary-light: #E2D1FF;
+  --primary-dark: #B088FF;
+  --text-gradient: radial-gradient(
+    74.64% 74.64% at 17.11% 76.36%, 
+    rgb(188, 171, 255) 0%, 
+    rgb(255, 255, 255) 44.5%, 
+    rgb(157, 133, 251) 100%
+  );
+  --glow-shadow: rgba(138, 108, 255, 0.5); */
+
+  /* Tema Gris */
+  --primary-color: #1D2733;
+  --primary-cursor: #59c8ff;
+  --primary-cursor2: #56baec;
+  --primary-light: #2FBAFF;
+  --primary-light2: #ffffff;
+  --primary-dark: #18212C;
+  --text-gradient: radial-gradient(
+    74.64% 74.64% at 17.11% 76.36%, 
+    rgb(47, 186, 255) 0%,    /* Cambiado a un azul claro */
+    rgb(255, 255, 255) 44.5%,
+    rgb(89, 200, 255) 100%   /* Cambiado a un azul medio */
+  );
+  --glow-shadow: rgba(47, 186, 255, 0.5); /* Actualizado para coincidir con el nuevo azul */
+  --font-comic: 'ComicChub', sans-serif;
+  --font-hey-comic: 'Hey Comic', sans-serif;
+}
+
+/* Tema Naranja */
+[data-theme="orange"] {
+  /* Tema Púrpura */
   --primary-color: #8A6CFF;
   --primary-light: #E2D1FF;
   --primary-dark: #B088FF;
@@ -10,18 +42,16 @@
     rgb(157, 133, 251) 100%
   );
   --glow-shadow: rgba(138, 108, 255, 0.5);
+} 
+
+
+@font-face {
+  font-family: 'ComicChub';
+  src: url('../assets/font/K26ComicKats.ttf') format('truetype');
 }
 
-/* Tema Naranja */
-[data-theme="orange"] {
-  --primary-color: #FF8A3D;
-  --primary-light: #FFD1B0;
-  --primary-dark: #FF6B1A;
-  --text-gradient: radial-gradient(
-    74.64% 74.64% at 17.11% 76.36%, 
-    rgb(255, 171, 76) 0%, 
-    rgb(255, 255, 255) 44.5%, 
-    rgb(251, 176, 133) 100%
-  );
-  --glow-shadow: rgba(255, 171, 76, 0.5);
-} 
+@font-face {
+  font-family: 'Hey Comic';
+  src: url('../assets/font/Hey_Comic.ttf') format('truetype');
+}
+

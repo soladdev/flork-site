@@ -9,8 +9,8 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #000000;
-  color: #FFFFFF;
+  background-color: var(--primary-color);
+  color: var(--primary-light2);
 }
 
 #root {
@@ -31,8 +31,8 @@ html, body {
   width: 1.0rem;
   height: 1.0rem;
   border-radius: 50%;
-  background: var(--primary-color);
-  box-shadow: 0 0 20px 5px var(--primary-color);
+  background: var(--primary-cursor2);
+  box-shadow: 0 0 20px 5px var(--primary-cursor);
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 9999;

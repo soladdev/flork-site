@@ -1,3 +1,4 @@
+
 .meetFlorkContainer {
   display: flex;
   align-items: center;
@@ -24,15 +25,46 @@
   text-align: justify;
   flex: 1;
   max-width: 600px;
+  background: var(--primary-dark);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease;
+  cursor: pointer;
+  will-change: transform;
+  transform: perspective(1000px) rotateX(0) rotateY(0);
+}
+
+.contentWrapper:hover {
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, var(--primary-dark), var(--secondary-dark));
+}
+
+.title, .description {
+  transform: translateZ(50px);
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+  }
+  100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
 }
 
 .title {
-  font-family: 'Clash Display', sans-serif;
+  font-family: var(--font-comic);
   font-size: 48px;
   font-weight: 900;
   margin-bottom: 10px;
   position: relative;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 1px;
   
   background: var(--text-gradient);
@@ -43,13 +75,13 @@
 }
 
 .textContent {
+  font-family: var(--font-hey-comic);
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .description {
-  font-family: "Poppins", sans-serif;
   font-size: 25px;
   font-weight: 600;
   line-height: 133%;

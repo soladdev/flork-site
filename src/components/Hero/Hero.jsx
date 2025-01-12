@@ -3,6 +3,7 @@ import styles from './Hero.module.css'
 import TextCarousel from '../TextCarousel/TextCarousel'
 import FlorkCharacter from '../FlorkCharacter/FlorkCharacter'
 import MeetFlork from '../MeetFlork/MeetFlork'
+import AIAgent from '../AIAgent/AIAgent'
 import HowToBuy from '../HowToBuy/HowToBuy'
 import FlorkWantsYou from '../FlorkWantsYou/FlorkWantsYou'
 import ContractInfo from '../ContractInfo/ContractInfo'
@@ -15,7 +16,7 @@ const Hero = () => {
   return (
     <div className={styles.heroContainer}>
       <div className={styles.backgroundWrapper}>
-        <img
+        {/* <img
           className={styles.backgroundImage}
           decoding="async"
           sizes="100vw"
@@ -24,7 +25,7 @@ const Hero = () => {
                   https://framerusercontent.com/images/NpOIKJhTZgXWJ73lO8DouffVEZ0.jpg 1441w"
           src="https://framerusercontent.com/images/NpOIKJhTZgXWJ73lO8DouffVEZ0.jpg"
           alt="Background"
-        />
+        /> */}
       </div>
       <div className={styles.contentWrapper}>
         <h1 className={styles.title}>
@@ -34,11 +35,12 @@ const Hero = () => {
         <div className={styles.characterWrapper}>
           <FlorkCharacter />
         </div>
-        <div className={styles.carouselWrapper}>
+        {/* <div className={styles.carouselWrapper}>
           <TextCarousel />
-        </div>
+        </div> */}
         <MeetFlork />
-        <HowToBuy />
+        <AIAgent />
+        {/* <HowToBuy /> */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

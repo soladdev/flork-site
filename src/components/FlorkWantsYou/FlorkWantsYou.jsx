@@ -1,9 +1,37 @@
 import styles from './FlorkWantsYou.module.css'
 import img from '../../assets/images/a3.avif'
+import { useRef } from 'react'
+
 const FlorkWantsYou = () => {
+  const cardRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = (y - centerY) / 20;
+    const rotateY = -(x - centerX) / 20;
+    
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  };
+
+  const handleMouseLeave = () => {
+    cardRef.current.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.contentWrapper}>
+      <div 
+        ref={cardRef}
+        className={styles.contentWrapper}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <h2 className={styles.title}>Flork Wants you</h2>
         
         <p className={styles.description}>
@@ -15,85 +43,17 @@ const FlorkWantsYou = () => {
             href="https://x.com/florkcto" 
             target="_blank" 
             rel="noopener"
-            className={`${styles.button} ${styles.presaleButton}`}
+            className={styles.button}
           >
-            <svg width="277" height="68" viewBox="-1 -1 277 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g filter="url(#filter0_d_89_689)">
-                <rect x="0.203247" y="0.674805" width="274" height="65" rx="18.7087" fill="url(#paint0_radial_89_689)"/>
-                <text 
-                  x="50%" 
-                  y="50%" 
-                  dominantBaseline="middle" 
-                  textAnchor="middle" 
-                  fill="#230E74" 
-                  fontSize="24"
-                  fontFamily="Clash Display"
-                  fontWeight="700"
-                  letterSpacing="0.02em"
-                  style={{ textTransform: 'uppercase' }}
-                >
-                  Follow me on x
-                </text>
-              </g>
-              <defs>
-                <filter id="filter0_d_89_689" x="0.203247" y="0.674805" width="274.368" height="65.7357" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                  <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                  <feOffset dx="0.367834" dy="0.735668"/>
-                  <feComposite in2="hardAlpha" operator="out"/>
-                  <feColorMatrix type="matrix" values="0 0 0 0 0.541176 0 0 0 0 0.423529 0 0 0 0 1 0 0 0 1 0"/>
-                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_689"/>
-                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_689" result="shape"/>
-                </filter>
-                <radialGradient id="paint0_radial_89_689" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(47.0729 50.3112) rotate(-5.71419) scale(205.534 48.45)">
-                  <stop stopColor="#BDABFF"/>
-                  <stop offset="0.445" stopColor="white"/>
-                  <stop offset="1" stopColor="#9D85FC"/>
-                </radialGradient>
-              </defs>
-            </svg>
+            Follow me on x
           </a>
           <a 
             href="https://t.me/florkcommunity" 
             target="_blank" 
             rel="noopener"
-            className={`${styles.button} ${styles.presaleButton}`}
+            className={styles.button}
           >
-            <svg width="277" height="68" viewBox="-1 -1 277 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g filter="url(#filter0_d_89_689)">
-                <rect x="0.203247" y="0.674805" width="274" height="65" rx="18.7087" fill="url(#paint0_radial_89_689)"/>
-                <text 
-                  x="50%" 
-                  y="50%" 
-                  dominantBaseline="middle" 
-                  textAnchor="middle" 
-                  fill="#230E74" 
-                  fontSize="24"
-                  fontFamily="Clash Display"
-                  fontWeight="700"
-                  letterSpacing="0.02em"
-                  style={{ textTransform: 'uppercase' }}
-                >
-                  Join my telegram
-                </text>
-              </g>
-              <defs>
-                <filter id="filter0_d_89_689" x="0.203247" y="0.674805" width="274.368" height="65.7357" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                  <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                  <feOffset dx="0.367834" dy="0.735668"/>
-                  <feComposite in2="hardAlpha" operator="out"/>
-                  <feColorMatrix type="matrix" values="0 0 0 0 0.541176 0 0 0 0 0.423529 0 0 0 0 1 0 0 0 1 0"/>
-                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_689"/>
-                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_689" result="shape"/>
-                </filter>
-                <radialGradient id="paint0_radial_89_689" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(47.0729 50.3112) rotate(-5.71419) scale(205.534 48.45)">
-                  <stop stopColor="#BDABFF"/>
-                  <stop offset="0.445" stopColor="white"/>
-                  <stop offset="1" stopColor="#9D85FC"/>
-                </radialGradient>
-              </defs>
-            </svg>
+            Join my telegram
           </a>
         </div>
       </div>
