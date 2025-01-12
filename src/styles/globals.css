@@ -2,17 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* Cursor por defecto */
-body {
-  cursor: url('../assets/images/cursor/puntero1/angel.png') 0 0, auto !important;
-}
-
-/* Elementos seleccionables */
-a, button, input, textarea, select, [role="button"], 
-[tabindex]:not([tabindex="-1"]) {
-  cursor: url('/assets/images/cursor/puntero1/devil.png') 0 0, pointer !important;
+  cursor: none !important;
 }
 
 html, body {
@@ -22,6 +12,7 @@ html, body {
   padding: 0;
   background-color: var(--primary-color);
   color: var(--primary-light2);
+  cursor: none !important;
 }
 
 #root {
