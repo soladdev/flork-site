@@ -57,6 +57,7 @@ const Hero = () => {
         >
           <ContractInfo className={styles.contractInfo}/>
         </motion.div>
+
           {/* <Florkonomics /> */}
         {/* <motion.div
           initial={{ opacity: 0 }}
