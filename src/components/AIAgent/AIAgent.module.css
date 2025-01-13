@@ -579,3 +579,8 @@
     color: rgba(188, 171, 255, 0.5);
 }
 
+@media (max-width: 1500px) {
+    .container {
+        scale: .9;
+    }
+}

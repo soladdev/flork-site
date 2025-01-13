@@ -9,7 +9,7 @@ import FlorkWantsYou from '../FlorkWantsYou/FlorkWantsYou'
 import ContractInfo from '../ContractInfo/ContractInfo'
 import Florkonomics from '../Florkonomics/Florkonomics'
 import FlorkWaiting from '../FlorkWaiting/FlorkWaiting'
-import background from '../../assets/images/new/background.png'
+import background from '../../assets/images/new/flork_background_blanco_01.png'
 
 
 
