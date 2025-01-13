@@ -14,23 +14,30 @@ function App() {
   });
 
   useEffect(() => {
-    // Función para esperar que todos los recursos se carguen
-    const waitForLoad = () => {
-      Promise.all(
-        Array.from(document.images)
-          .filter(img => !img.complete)
-          .map(img => new Promise(resolve => {
-            img.onload = img.onerror = resolve;
-          }))
-      ).then(() => {
-        // Agregamos un pequeño delay adicional para asegurar una transición suave
+    const waitForLoad = async () => {
+      try {
+        // Esperar que las fuentes se carguen
+        await document.fonts.ready;
+        
+        // Esperar que las imágenes se carguen
+        await Promise.all(
+          Array.from(document.images)
+            .filter(img => !img.complete)
+            .map(img => new Promise(resolve => {
+              img.onload = img.onerror = resolve;
+            }))
+        );
+
+        // Delay adicional
         setTimeout(() => {
           setLoading(false);
         }, 1000);
-      });
+      } catch (error) {
+        console.error('Error loading resources:', error);
+        setLoading(false);
+      }
     };
 
-    // Esperamos que el DOM esté listo
     if (document.readyState === 'complete') {
       waitForLoad();
     } else {
