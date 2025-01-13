@@ -9,7 +9,7 @@ import FlorkWantsYou from '../FlorkWantsYou/FlorkWantsYou'
 import ContractInfo from '../ContractInfo/ContractInfo'
 import Florkonomics from '../Florkonomics/Florkonomics'
 import FlorkWaiting from '../FlorkWaiting/FlorkWaiting'
-import backgroundImage from '../../assets/images/new/background.png'
+import background from '../../assets/images/new/background.png'
 
 
 
@@ -20,8 +20,7 @@ const Hero = () => {
         <img
           className={styles.backgroundImage}
           decoding="async"
-          sizes="100vw"
-          src={backgroundImage}
+          src={background}
           alt="Background"
         />
       </div>
