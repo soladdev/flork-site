@@ -57,7 +57,7 @@ const Partners = () => {
   }, [isPaused, position, partners.length]);
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="partners">
       <h2 className={styles.title}>Partners & Exchanges</h2>
       <div className={styles.logoCarouselContainer}>
         <div className={styles.movingBand}>
