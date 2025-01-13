@@ -20,6 +20,7 @@ const Hero = () => {
         <img
           className={styles.backgroundImage}
           decoding="async"
+          sizes="100vw"
           src={background}
           alt="Background"
         />
