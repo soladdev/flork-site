@@ -135,6 +135,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  outline: none;
+}
+
+.menuButton:focus {
+  outline: none;
+}
+
+/* Para navegadores webkit (Chrome, Safari) */
+.menuButton:focus-visible {
+  outline: none;
+}
+
+/* Para Firefox */
+.menuButton::-moz-focus-inner {
+  border: 0;
 }
 
 .line {

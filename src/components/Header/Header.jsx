@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import styles from './Header.module.css'
-import { FaXTwitter, FaTelegram, FaChartLine, FaEllipsisVertical } from 'react-icons/fa6'
+import { FaTelegram, FaChartLine } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
+import { BsThreeDotsVertical } from 'react-icons/bs'
 import logo from '../../assets/images/new/logo_flork.svg'
 
 const Header = () => {
@@ -65,7 +67,7 @@ const Header = () => {
             onClick={() => setIsSocialMenuOpen(!isSocialMenuOpen)}
             aria-label="Social Media Menu"
           >
-            <FaEllipsisVertical size={20} />
+            <BsThreeDotsVertical size={20} />
           </button>
           
           <div className={`${styles.socialLinks} ${isSocialMenuOpen ? styles.show : ''}`}>
