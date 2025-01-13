@@ -132,10 +132,8 @@
   position: relative;
   width: 30px;
   height: 30px;
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  outline: none;
 }
 
 .menuButton:focus {
@@ -262,7 +260,7 @@
   }
 
   .menuButton {
-    display: block;
+    display: flex;
   }
 
   .rightSection {
