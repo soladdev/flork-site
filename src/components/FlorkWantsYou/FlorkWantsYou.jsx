@@ -25,7 +25,7 @@ const FlorkWantsYou = () => {
   };
 
   return (
-    <div className={styles.container} id="flork-wants-you">
+    <div className={styles.container}>
       <div 
         ref={cardRef}
         className={styles.contentWrapper}

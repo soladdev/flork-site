@@ -60,13 +60,13 @@ const Header = () => {
             </button>
           </li>
           <li>
-            <button onClick={() => scrollToSection('flork-wants-you')}>
-              Flork Wants you
+            <button onClick={() => scrollToSection('how-to-buy')}>
+              How to Buy
             </button>
           </li>
           <li>
-            <button onClick={() => scrollToSection('partners')}>
-              Partners
+            <button onClick={() => scrollToSection('florkonomics')}>
+              Florkonomics
             </button>
           </li>
         </ul>
