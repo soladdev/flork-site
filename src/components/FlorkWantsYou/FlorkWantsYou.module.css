@@ -1,6 +1,6 @@
 .container {
-  display: flex;
-  justify-content: space-between;
+  display: flex  ;
+  justify-content: space-around;
   align-items: center;
   padding: 80px 20px;
   max-width: 1200px;
@@ -137,7 +137,7 @@
 .imageWrapper {
   flex: 1;
   max-width: 290px;
-  margin: 0 40px;
+  margin: 0 10px;
 }
 
 .florkImage {
