@@ -1,6 +1,6 @@
 import styles from './LogoCarousel.module.css'
 import solscan from '../../assets/images/solscan.svg'
-
+import { useState, useRef, useEffect } from 'react'
 
 const Separator = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,6 +15,10 @@ const Separator = () => (
 );
 
 const LogoCarousel = () => {
+  const [position, setPosition] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const sliderRef = useRef(null);
+  
   const logos = [
     { 
       name: 'Dextools',
@@ -84,25 +88,59 @@ const LogoCarousel = () => {
     }
   ];
   
-  const repeatedLogos = [...logos, ...logos];
+  const repeatedLogos = [...logos, ...logos, ...logos, ...logos];
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    const itemWidth = slider.firstElementChild?.offsetWidth || 0;
+    const gap = 60;
+    const singleSetWidth = (itemWidth + gap) * logos.length;
+    
+    // Comenzamos desde la segunda copia para tener espacio para desplazar en ambas direcciones
+    if (position === 0) {
+      setPosition(-singleSetWidth);
+    }
+
+    const moveSlider = () => {
+      if (isPaused) return;
+
+      setPosition(prev => {
+        const newPosition = prev - 1;
+        
+        // Cuando llegamos al final de la segunda copia, volvemos a la posición inicial
+        if (Math.abs(newPosition) >= singleSetWidth * 2) {
+          return -singleSetWidth;
+        }
+        return newPosition;
+      });
+    };
+
+    const intervalId = setInterval(moveSlider, 20);
+    return () => clearInterval(intervalId);
+  }, [isPaused, position, logos.length]);
 
   return (
     <div className={styles.logoCarouselContainer}>
       <div className={styles.movingBand}>
-        <div className={styles.carouselSection}>
-          <ul className={styles.carouselList}>
+        <div 
+          className={styles.carouselSection}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <ul 
+            ref={sliderRef}
+            className={styles.carouselList}
+            style={{ 
+              transform: `translateX(${position}px)`,
+              transition: 'transform 0s linear'
+            }}
+          >
             {repeatedLogos.map((logo, index) => (
-              <li style={{height: '100px', overflow: 'hidden'}} key={`carousel-item-${index}`}>
+              <li key={`carousel-item-${index}`}>
                 <div className={styles.carouselItem}>
-                  {logo.component ? (
-                    logo.component
-                  ) : (
-                    <img 
-                      src={logo.img}
-                      alt={logo.name}
-                      className={styles.logoImage}
-                    />
-                  )}
+                  {logo.component}
                 </div>
               </li>
             ))}
@@ -110,7 +148,7 @@ const LogoCarousel = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LogoCarousel 
+export default LogoCarousel;
