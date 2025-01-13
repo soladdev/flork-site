@@ -5,6 +5,20 @@ import { FaXTwitter } from 'react-icons/fa6'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import logo from '../../assets/images/new/logo_flork.svg'
 
+const ShareIcon = () => (
+  <svg 
+    stroke="currentColor" 
+    fill="currentColor" 
+    strokeWidth="0" 
+    viewBox="0 0 512 512" 
+    height="20px" 
+    width="20px" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M384 336a63.78 63.78 0 0 0-46.12 19.7l-148-83.27a63.85 63.85 0 0 0 0-32.86l148-83.27a63.8 63.8 0 1 0-15.73-27.87l-148 83.27a64 64 0 1 0 0 88.6l148 83.27A64 64 0 1 0 384 336z" />
+  </svg>
+);
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSocialMenuOpen, setIsSocialMenuOpen] = useState(false)
@@ -67,7 +81,7 @@ const Header = () => {
             onClick={() => setIsSocialMenuOpen(!isSocialMenuOpen)}
             aria-label="Social Media Menu"
           >
-            <BsThreeDotsVertical size={20} />
+            <ShareIcon />
           </button>
           
           <div className={`${styles.socialLinks} ${isSocialMenuOpen ? styles.show : ''}`}>
