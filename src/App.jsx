@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 4000);
 
     // Función para manejar el hover
     const handleMouseEnter = (e) => {
