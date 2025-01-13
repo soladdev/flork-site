@@ -125,6 +125,41 @@
 /* Menú móvil */
 .menuButton {
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.line {
+  display: block;
+  width: 200%;
+  height: 2px;
+  background-color: var(--primary-light);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.top {
+  transform: translateY(-4px);
+}
+
+.bottom {
+  transform: translateY(4px);
+}
+
+.menuButton.open .top {
+  transform: translateY(0) rotate(45deg);
+}
+
+.menuButton.open .bottom {
+  transform: translateY(0) rotate(-45deg);
 }
 
 .florkToolsButton {
