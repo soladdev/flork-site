@@ -44,14 +44,14 @@
 }
 
 .florkImage {
-  width: 400px;
+  width: 200px;
   height: auto;
 }
 
 .spinnerContainer {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: -30px;
+  right: -30px;
 }
 
 .loaderGif {
