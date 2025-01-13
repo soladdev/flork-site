@@ -16,6 +16,9 @@
 /* Logo */
 .logoSection {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .logo {
@@ -124,6 +127,64 @@
   display: none;
 }
 
+.florkToolsButton {
+  background: transparent;
+  color: var(--primary-light2);
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.florkToolsButton::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-light2);
+  transition: width 0.3s ease;
+}
+
+.florkToolsButton:hover {
+  color: var(--primary-light);
+}
+
+.florkToolsButton:hover::after {
+  width: 100%;
+}
+
+.socialDropdown {
+  position: relative;
+  display: none;
+}
+
+.socialDropdownButton {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-light);
+  color: var(--primary-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socialDropdownButton:hover {
+  background: var(--primary-light);
+  color: var(--primary-light2);
+  transform: rotate(15deg);
+}
+
 @media (max-width: 1024px) {
   .headerContainer {
     margin: 5px 15px;
@@ -167,6 +228,42 @@
     padding: 8px 15px;
     font-size: 14px;
   }
+
+  .florkToolsButton {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  .logoSection {
+    gap: 10px;
+  }
+
+  .socialDropdown {
+    display: block;
+  }
+
+  .socialDropdown .socialLinks {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--primary-dark);
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 8px;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .socialDropdown .socialLinks.show {
+    display: flex;
+  }
+
+  /* Ocultar los enlaces sociales de PC en móvil */
+  .rightSection > .socialLinks {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -178,6 +275,15 @@
   .socialLink svg {
     width: 16px;
     height: 16px;
+  }
+
+  .logoSection {
+    gap: 8px;
+  }
+
+  .florkToolsButton {
+    font-size: 14px;
+    padding: 4px 8px;
   }
 }
  

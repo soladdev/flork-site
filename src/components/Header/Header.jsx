@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import styles from './Header.module.css'
-import { FaXTwitter, FaTelegram } from 'react-icons/fa6'
+import { FaXTwitter, FaTelegram, FaChartLine, FaEllipsisVertical } from 'react-icons/fa6'
 import logo from '../../assets/images/new/logo_flork.svg'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSocialMenuOpen, setIsSocialMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
@@ -16,9 +17,17 @@ const Header = () => {
 
   return (
     <header className={styles.headerContainer}>
-      {/* Logo */}
+      {/* Sección del Logo */}
       <div className={styles.logoSection}>
         <img src={logo} alt="Flork Logo" className={styles.logo} />
+        <a 
+          href="https://www.florktools.io/sign-in" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className={styles.florkToolsButton}
+        >
+          Flork Tools
+        </a>
       </div>
 
       {/* Navegación central */}
@@ -49,6 +58,48 @@ const Header = () => {
 
       {/* Sección derecha */}
       <div className={styles.rightSection}>
+        {/* Botón de redes sociales móvil */}
+        <div className={styles.socialDropdown}>
+          <button 
+            className={styles.socialDropdownButton}
+            onClick={() => setIsSocialMenuOpen(!isSocialMenuOpen)}
+            aria-label="Social Media Menu"
+          >
+            <FaEllipsisVertical size={20} />
+          </button>
+          
+          <div className={`${styles.socialLinks} ${isSocialMenuOpen ? styles.show : ''}`}>
+            <a 
+              href="https://x.com/florkcto" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.socialLink}
+              aria-label="Twitter"
+            >
+              <FaXTwitter size={20} />
+            </a>
+            <a 
+              href="https://t.me/florkcommunity" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.socialLink}
+              aria-label="Telegram"
+            >
+              <FaTelegram size={20} />
+            </a>
+            <a 
+              href="https://dexscreener.com/ethereum/TU_DIRECCION_DEL_PAR"
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.socialLink}
+              aria-label="Dexscreener"
+            >
+              <FaChartLine size={20} />
+            </a>
+          </div>
+        </div>
+
+        {/* Enlaces sociales para PC */}
         <div className={styles.socialLinks}>
           <a 
             href="https://x.com/florkcto" 
@@ -68,7 +119,17 @@ const Header = () => {
           >
             <FaTelegram size={20} />
           </a>
+          <a 
+            href="https://dexscreener.com/ethereum/TU_DIRECCION_DEL_PAR"
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.socialLink}
+            aria-label="Dexscreener"
+          >
+            <FaChartLine size={20} />
+          </a>
         </div>
+        
         <a href="#" className={styles.buyButton}>
           Buy Flork
         </a>
