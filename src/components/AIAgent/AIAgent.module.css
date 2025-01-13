@@ -16,12 +16,12 @@
 .browserBar {
     width: 100%;
     height: 40px;
-    background: rgba(45, 27, 105, 0.95);
+    background: var(--primary-dark);
     display: flex;
     align-items: center;
     padding: 0 15px;
     gap: 15px;
-    border-bottom: 1px solid rgba(188, 171, 255, 0.2);
+    border-bottom: 1px solid var(--primary-light);
 }
 
 .browserControls {
@@ -51,7 +51,7 @@
 .browserAddress {
     flex: 1;
     height: 28px;
-    background: rgba(188, 171, 255, 0.1);
+    background: rgba(47, 186, 255, 0.1);
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -190,22 +190,22 @@
 }
 
 .cardFront {
-    background: linear-gradient(45deg, #BCABFF 0%, #e4ddff 30%, #9D85FB 70%);
+    background: linear-gradient(45deg, var(--primary-light) 0%, var(--primary-light2) 30%, var(--primary-cursor) 70%);
     padding: 1.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    border: 2px solid rgba(138, 108, 255, 0.3);
+    border: 2px solid var(--primary-light);
     border-image-slice: 1;
     border-image-source: linear-gradient(
         to right,
-        rgba(138, 108, 255, 0.1),
-        rgba(138, 108, 255, 0.5),
-        rgba(138, 108, 255, 0.2)
+        rgba(47, 186, 255, 0.1),
+        rgba(47, 186, 255, 0.5),
+        rgba(47, 186, 255, 0.2)
     );
     box-shadow: 
         0 8px 16px rgba(0, 0, 0, 0.1),
-        inset 0 0 20px rgba(188, 171, 255, 0.2);
+        inset 0 0 20px var(--glow-shadow);
 }
 
 .cardBack {
@@ -215,17 +215,17 @@
     align-items: center;
     justify-content: center;
     padding: 1.2rem;
-    border: 2px solid rgba(138, 108, 255, 0.3);
+    border: 2px solid var(--primary-light);
     border-image-slice: 1;
     border-image-source: linear-gradient(
         45deg,
-        rgba(138, 108, 255, 0.2),
-        rgba(138, 108, 255, 0.4),
-        rgba(138, 108, 255, 0.1)
+        rgba(47, 186, 255, 0.2),
+        rgba(47, 186, 255, 0.4),
+        rgba(47, 186, 255, 0.1)
     );
     box-shadow: 
         0 8px 16px rgba(0, 0, 0, 0.2),
-        inset 0 0 25px rgba(188, 171, 255, 0.1);
+        inset 0 0 25px var(--glow-shadow);
     backdrop-filter: blur(21.85px);
 }
 
@@ -319,7 +319,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
-    background: #2D1B69;
+    background: var(--primary-dark);
     padding: 0.5rem 2rem;
     border-radius: 8px;
     min-width: 250px;
