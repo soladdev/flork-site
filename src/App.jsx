@@ -10,14 +10,32 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [hoverClickable, setHoverClickable] = useState(false);
   const [cursorSet, setCursorSet] = useState(() => {
-    // Seleccionar aleatoriamente entre 1, 2, 3 y 4
     return Math.floor(Math.random() * 4) + 1;
   });
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 4000);
+    // Función para esperar que todos los recursos se carguen
+    const waitForLoad = () => {
+      Promise.all(
+        Array.from(document.images)
+          .filter(img => !img.complete)
+          .map(img => new Promise(resolve => {
+            img.onload = img.onerror = resolve;
+          }))
+      ).then(() => {
+        // Agregamos un pequeño delay adicional para asegurar una transición suave
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      });
+    };
+
+    // Esperamos que el DOM esté listo
+    if (document.readyState === 'complete') {
+      waitForLoad();
+    } else {
+      window.addEventListener('load', waitForLoad);
+    }
 
     // Función para manejar el hover
     const handleMouseEnter = (e) => {
@@ -30,8 +48,8 @@ function App() {
     document.addEventListener('mouseover', handleMouseEnter);
 
     return () => {
-      clearTimeout(timer);
       document.removeEventListener('mouseover', handleMouseEnter);
+      window.removeEventListener('load', waitForLoad);
     };
   }, []);
 

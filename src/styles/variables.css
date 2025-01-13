@@ -25,7 +25,7 @@
     rgb(89, 200, 255) 100%   /* Cambiado a un azul medio */
   );
   --glow-shadow: rgba(47, 186, 255, 0.5); /* Actualizado para coincidir con el nuevo azul */
-  --font-comic: 'ComicChub', sans-serif;
+  --font-comic: 'ComicChub';
   --font-hey-comic: 'Hey Comic', sans-serif;
 }
 
