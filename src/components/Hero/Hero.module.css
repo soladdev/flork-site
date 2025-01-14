@@ -119,4 +119,10 @@
   .characterWrapper {
     margin: 20px auto;
   }
+}
+
+@media (max-width: 450px) {
+  .title{
+    margin-top: calc(100vh - 80vh);
+  }
 } 
