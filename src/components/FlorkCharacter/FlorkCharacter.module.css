@@ -7,7 +7,6 @@
   align-items: center;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  overflow: hidden;
 }
 
 .characterWrapper {
@@ -18,8 +17,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.2s ease-out;
-  will-change: transform;
 }
 
 .characterImage {
