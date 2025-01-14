@@ -3,6 +3,7 @@ import AnimatedCursor from 'react-animated-cursor'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import Preloader from './components/Preloader/Preloader'
+import backgroundImage from './assets/images/new/flork_background_blanco_01.png'
 import './styles/globals.css'
 import './styles/variables.css'
 
@@ -12,30 +13,27 @@ function App() {
   const [cursorSet, setCursorSet] = useState(() => {
     return Math.floor(Math.random() * 4) + 1;
   });
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
-    // Función para esperar que todos los recursos se carguen
-    const waitForLoad = () => {
-      Promise.all(
-        Array.from(document.images)
-          .filter(img => !img.complete)
-          .map(img => new Promise(resolve => {
-            img.onload = img.onerror = resolve;
-          }))
-      ).then(() => {
-        // Agregamos un pequeño delay adicional para asegurar una transición suave
+    // Primero esperar que las fuentes se carguen
+    document.fonts.ready
+      .then(() => {
+        setFontsLoaded(true);
+        // Luego cargar las imágenes
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = backgroundImage;
+          img.onload = resolve;
+          img.onerror = resolve; // Asegura que no se quede colgado si la imagen falla
+        });
+      })
+      .then(() => {
+        // Agregar un pequeño delay adicional para asegurar una transición suave
         setTimeout(() => {
           setLoading(false);
         }, 1000);
       });
-    };
-
-    // Esperamos que el DOM esté listo
-    if (document.readyState === 'complete') {
-      waitForLoad();
-    } else {
-      window.addEventListener('load', waitForLoad);
-    }
 
     // Función para manejar el hover
     const handleMouseEnter = (e) => {
@@ -49,9 +47,14 @@ function App() {
 
     return () => {
       document.removeEventListener('mouseover', handleMouseEnter);
-      window.removeEventListener('load', waitForLoad);
     };
   }, []);
+
+  useEffect(() => {
+    if (fontsLoaded) {
+      // Puedes realizar acciones adicionales si las fuentes están cargadas
+    }
+  }, [fontsLoaded]);
 
   return (
     <div className="app-container">

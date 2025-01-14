@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'ComicChub';
+  src: url('../assets/font/K26ComicKats.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Hey Comic';
+  src: url('../assets/font/Hey_Comic.ttf') format('truetype');
+}
+
 :root {
   /* Tema Púrpura (Default) */
   /* --primary-color: #8A6CFF;
@@ -45,13 +55,4 @@
 } 
 
 
-@font-face {
-  font-family: 'ComicChub';
-  src: url('../assets/font/K26ComicKats.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Hey Comic';
-  src: url('../assets/font/Hey_Comic.ttf') format('truetype');
-}
 
