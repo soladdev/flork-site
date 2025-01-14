@@ -47,13 +47,13 @@
 }
 
 .titlePart1 {
-  font-size: 48px;
+  font-size: clamp(24px, 4vw, 48px);
   display: block;
   margin-bottom: 10px;
 }
 
 .titlePart2 {
-  font-size: 96px;
+  font-size: clamp(48px, 8vw, 96px);
   display: block;
   letter-spacing: 2px;
 }
@@ -108,5 +108,15 @@
   .characterWrapper {
     max-width: 95%;
     padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding-top: clamp(100px, 15vw, 153px);
+  }
+  
+  .characterWrapper {
+    margin: 20px auto;
   }
 } 

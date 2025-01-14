@@ -66,7 +66,7 @@ const AIAgent = () => {
   }, [])
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="ai-agent">
       <div className={styles.backgroundSquare}>
         <div className={styles.browserBar}>
           <div className={styles.browserControls}>
