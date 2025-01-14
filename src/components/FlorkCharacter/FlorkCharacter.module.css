@@ -53,6 +53,6 @@
 
 @media (max-width: 450px) {
   .characterContainer > *:first-child {
-    margin-top: calc(100vh - 80vh);
+    margin-top: calc(100vh - 85vh);
   }
 }
