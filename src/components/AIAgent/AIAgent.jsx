@@ -75,7 +75,7 @@ const AIAgent = () => {
             <span className={styles.browserDot}></span>
           </div>
           <div className={styles.browserAddress}>
-            <span className={styles.lockIcon}>🔒</span>
+            <span className={styles.lockIcon}>🔒</span>s
             <a href="https://florkcto.io/" target="_blank" className={styles.url} style={{ textDecoration: 'none'}}>florkcto.io/</a>
           </div>
         </div>
