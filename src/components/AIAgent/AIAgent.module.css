@@ -139,42 +139,32 @@
 }
 
 .cardFront {
-    background: linear-gradient(45deg, var(--primary-light) 0%, var(--primary-light2) 30%, var(--primary-cursor) 70%);
+    background: var(--primary-dark);
     padding: 1.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    border: 2px solid var(--primary-light);
+    border: 2px solid var(--primary-light2);
     border-image-slice: 1;
-    border-image-source: linear-gradient(
-        to right,
-        rgba(47, 186, 255, 0.1),
-        rgba(47, 186, 255, 0.5),
-        rgba(47, 186, 255, 0.2)
-    );
-    box-shadow: 
+    border-image-source: var(--primary-light2);
+    /* box-shadow: 
         0 8px 16px rgba(0, 0, 0, 0.1),
-        inset 0 0 20px var(--glow-shadow);
+        inset 0 0 20px var(--glow-shadow); */
 }
 
 .cardBack {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--primary-dark);
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1.2rem;
-    border: 2px solid var(--primary-light);
+    border: 2px solid var(--primary-light2);
     border-image-slice: 1;
-    border-image-source: linear-gradient(
-        45deg,
-        rgba(47, 186, 255, 0.2),
-        rgba(47, 186, 255, 0.4),
-        rgba(47, 186, 255, 0.1)
-    );
-    box-shadow: 
+    border-image-source: var(--primary-light2);
+    /* box-shadow: 
         0 8px 16px rgba(0, 0, 0, 0.2),
-        inset 0 0 25px var(--glow-shadow);
+        inset 0 0 25px var(--glow-shadow); */
     backdrop-filter: blur(21.85px);
 }
 
@@ -219,7 +209,7 @@
 .dots span {
     width: 5px;
     height: 5px;
-    background-color: #230E74;
+    background-color: var(--primary-light2);
     border-radius: 50%;
     display: inline-block;
 }
@@ -227,7 +217,7 @@
 .cardTitle {
     font-family: 'Clash Display', sans-serif;
     font-weight: 600;
-    color: #230E74;
+    color: var(--primary-light2);
     font-size: 1.1rem;
     text-align: center;
     width: 100%;
@@ -634,6 +624,7 @@
 /* Efecto de iluminación del circuito */
 .backgroundSquare::after {
     content: '';
+    opacity: 0.7;
     position: absolute;
     top: 0;
     left: -100%;
