@@ -9,9 +9,7 @@ const Preloader = () => {
 
   useEffect(() => {
     Promise.all([
-      // Cargar fuentes
       document.fonts.ready,
-      // Tus promesas existentes de imágenes
       new Promise((resolve) => {
         const img = new Image();
         img.src = backgroundImage;

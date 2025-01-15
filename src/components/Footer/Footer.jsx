@@ -9,7 +9,6 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
-        {/* Sección del Logo */}
         <div className={styles.logoSection}>
           <img src={logo} alt="Flork Logo" className={styles.logo} />
           <a 
@@ -22,7 +21,6 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Sección de Enlaces */}
         <div className={styles.linksSection}>
           <h3 className={styles.sectionTitle}>Quick Links</h3>
           <ul className={styles.linksList}>
@@ -33,7 +31,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Sección de Redes Sociales */}
         <div className={styles.socialSection}>
           <h3 className={styles.sectionTitle}>Follow Us</h3>
           <div className={styles.socialLinks}>

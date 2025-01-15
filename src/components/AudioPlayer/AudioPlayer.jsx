@@ -24,7 +24,6 @@ const AudioPlayer = () => {
         preload="metadata"
       />
       {isPlaying ? (
-        // Ícono de pausa
         <svg 
           width="16" 
           aria-label="pause audio" 
@@ -41,7 +40,6 @@ const AudioPlayer = () => {
           />
         </svg>
       ) : (
-        // Ícono de reproducción
         <svg 
           width="16" 
           aria-label="play audio" 

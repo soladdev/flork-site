@@ -16,26 +16,22 @@ function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
-    // Primero esperar que las fuentes se carguen
     document.fonts.ready
       .then(() => {
         setFontsLoaded(true);
-        // Luego cargar las imágenes
         return new Promise((resolve) => {
           const img = new Image();
           img.src = backgroundImage;
           img.onload = resolve;
-          img.onerror = resolve; // Asegura que no se quede colgado si la imagen falla
+          img.onerror = resolve;
         });
       })
       .then(() => {
-        // Agregar un pequeño delay adicional para asegurar una transición suave
         setTimeout(() => {
           setLoading(false);
         }, 1000);
       });
 
-    // Función para manejar el hover
     const handleMouseEnter = (e) => {
       const isClickable = e.target.matches(
         'a, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"], [tabindex]:not([tabindex="-1"]), .link'
@@ -52,7 +48,6 @@ function App() {
 
   useEffect(() => {
     if (fontsLoaded) {
-      // Puedes realizar acciones adicionales si las fuentes están cargadas
     }
   }, [fontsLoaded]);
 

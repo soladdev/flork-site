@@ -98,7 +98,6 @@ const LogoCarousel = () => {
     const gap = 60;
     const singleSetWidth = (itemWidth + gap) * logos.length;
     
-    // Comenzamos desde la segunda copia para tener espacio para desplazar en ambas direcciones
     if (position === 0) {
       setPosition(-singleSetWidth);
     }
@@ -109,7 +108,6 @@ const LogoCarousel = () => {
       setPosition(prev => {
         const newPosition = prev - 1;
         
-        // Cuando llegamos al final de la segunda copia, volvemos a la posición inicial
         if (Math.abs(newPosition) >= singleSetWidth * 2) {
           return -singleSetWidth;
         }
