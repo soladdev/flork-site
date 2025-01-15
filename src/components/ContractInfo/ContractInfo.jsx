@@ -1,6 +1,5 @@
 import styles from './ContractInfo.module.css'
 import img from '../../assets/images/new/flork_acostado.svg'
-import Partners from '../Partners/Partners' 
 import { useState } from 'react'
 
 const ContractInfo = () => {
@@ -15,7 +14,6 @@ const ContractInfo = () => {
 
   return (
     <div className={styles.container}>
-      <Partners />
       <h2 className={styles.title}>
         Powered by solana network Contract
       </h2>

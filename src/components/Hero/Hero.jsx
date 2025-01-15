@@ -10,6 +10,8 @@ import ContractInfo from '../ContractInfo/ContractInfo'
 import Florkonomics from '../Florkonomics/Florkonomics'
 import FlorkWaiting from '../FlorkWaiting/FlorkWaiting'
 import background from '../../assets/images/new/flork_background_blanco_01.png'
+import Partners from '../Partners/Partners' 
+
 
 
 
@@ -36,6 +38,14 @@ const Hero = () => {
         {/* <div className={styles.carouselWrapper}>
           <TextCarousel />
         </div> */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <ContractInfo className={styles.contractInfo}/>
+        </motion.div>
         <MeetFlork />
         <AIAgent />
         {/* <HowToBuy /> */}
@@ -47,14 +57,6 @@ const Hero = () => {
         >
           <FlorkWantsYou />
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <ContractInfo className={styles.contractInfo}/>
-        </motion.div>
 
           {/* <Florkonomics /> */}
         {/* <motion.div
@@ -65,6 +67,9 @@ const Hero = () => {
         >
           <FlorkWaiting />
         </motion.div> */}
+
+      <Partners />
+
       </div>
     </div>
   )
