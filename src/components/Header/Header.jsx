@@ -142,7 +142,8 @@ const Header = () => {
             className={styles.socialLink}
             aria-label="Dexscreener"
           >
-            <FaChartLine size={20} />
+            {/* <FaChartLine size={20} /> */}
+            <ShareIcon />
           </a>
         </div>
         

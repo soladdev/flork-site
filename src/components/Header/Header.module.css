@@ -219,6 +219,7 @@
   color: var(--primary-light);
   width: 40px;
   height: 40px;
+  padding: 0px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -230,7 +231,6 @@
 .socialDropdownButton:hover {
   background: var(--primary-light);
   color: var(--primary-light2);
-  transform: rotate(15deg);
 }
 
 @media (max-width: 1024px) {
