@@ -1,5 +1,5 @@
 .container {
-  padding: 70px 0px;
+  padding: 60px 0px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -39,7 +39,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   margin: 0 auto;
   position: relative;
 }
@@ -47,6 +47,7 @@
 .imageWrapper {
   width: 40%;
   margin-bottom: 0;
+  margin-right: 30px;
 }
 
 .florkImage {
@@ -57,7 +58,7 @@
 }
 
 .addressContainer {
-  width: 45%;
+  width: 100%;
   position: relative;
   right: auto;
   top: auto;
