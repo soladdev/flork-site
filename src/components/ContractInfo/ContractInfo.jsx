@@ -3,7 +3,7 @@ import img from '../../assets/images/new/flork_acostado.svg'
 import { useState } from 'react'
 
 const ContractInfo = () => {
-  const contractAddress = "0x0000000000000000000000000000000000000000"
+  const contractAddress = "0x000000000000000000"
   const [isCopied, setIsCopied] = useState(false)
   
   const copyToClipboard = () => {
