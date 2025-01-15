@@ -44,10 +44,10 @@ const MeetFlork = () => {
           <h2 className={styles.title}>MEET FLORK</h2>
           <div className={styles.textContent}>
             <p className={styles.description}>
-              Flork is an SOLANA meme token inspired by a popular online webcomic known for its quirky sock puppet characters drawn in MS Paint.
+              Flork is a Solana-powered meme token inspired by the beloved online webcomic known for its quirky sock puppet characters drawn in MS Paint.
             </p>
             <p className={styles.description}>
-              At Flork, it's all about community no taxes, no fees. We focus on stress-free growth and success. Join us to build and thrive together!
+              We’re redefining what it means to build a community-driven token—no taxes, no fees, just pure stress-free growth and success! At Flork, every member is a vital part of the journey as we thrive together in the Solana ecosystem.
             </p>
           </div>
         </div>
