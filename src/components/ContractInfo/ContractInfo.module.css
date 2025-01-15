@@ -234,8 +234,8 @@
   }
 
   .tooltip {
-    bottom: 10px;
-    right: 10px;
+    /* bottom: 10px; */
+    /* right: 10px; */
     padding: 10px 16px;
     font-size: 14px;
   }
@@ -272,8 +272,8 @@
   }
 
   .tooltip {
-    bottom: 5px;
-    right: 5px;
+    /* bottom: 5px;
+    right: 5px; */
     padding: 8px 12px;
     font-size: 12px;
   }
