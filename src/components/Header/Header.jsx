@@ -104,7 +104,7 @@ const Header = () => {
               <FaTelegram size={20} />
             </a>
             <a 
-              href="https://dexscreener.com/ethereum/TU_DIRECCION_DEL_PAR"
+              href="https://dexscreener.com/solana/8edbm6xtyasazqg6nn2upkyisfv81xtlmzxhcrbgekvc"
               target="_blank" 
               rel="noopener noreferrer" 
               className={styles.socialLink}
@@ -136,7 +136,7 @@ const Header = () => {
             <FaTelegram size={20} />
           </a>
           <a 
-            href="https://dexscreener.com/ethereum/TU_DIRECCION_DEL_PAR"
+            href="https://dexscreener.com/solana/8edbm6xtyasazqg6nn2upkyisfv81xtlmzxhcrbgekvc"
             target="_blank" 
             rel="noopener noreferrer" 
             className={styles.socialLink}
@@ -147,7 +147,7 @@ const Header = () => {
           </a>
         </div>
         
-        <a href="#" className={styles.buyButton}>
+        <a href="https://raydium.io/swap/?inputMint=sol&outputMint=CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump" className={styles.buyButton}>
           Buy Flork
         </a>
       </div>

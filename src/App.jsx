@@ -6,7 +6,7 @@ import Preloader from './components/Preloader/Preloader'
 import backgroundImage from './assets/images/new/flork_background_blanco_01.png'
 import './styles/globals.css'
 import './styles/variables.css'
-
+import Footer from './components/Footer/Footer'
 function App() {
   const [loading, setLoading] = useState(true);
   const [hoverClickable, setHoverClickable] = useState(false);
@@ -93,6 +93,7 @@ function App() {
         <>
           <Header />
           <Hero />
+          <Footer />
         </>
       )}
     </div>

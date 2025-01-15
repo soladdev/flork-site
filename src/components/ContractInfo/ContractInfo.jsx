@@ -3,7 +3,7 @@ import img from '../../assets/images/new/flork_acostado.svg'
 import { useState } from 'react'
 
 const ContractInfo = () => {
-  const contractAddress = "0x000000000000000000"
+  const contractAddress = "CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump"
   const [isCopied, setIsCopied] = useState(false)
   
   const copyToClipboard = () => {
@@ -46,7 +46,7 @@ const ContractInfo = () => {
       </div>
       
       <div className={`${styles.tooltip} ${isCopied ? styles.show : ''}`}>
-        ¡Copiado al portapapeles!
+        Copied to clipboard!
       </div>
     </div>
   )
