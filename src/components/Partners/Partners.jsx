@@ -5,8 +5,9 @@ import styles from './Partners.module.css'
 const partnerImages = import.meta.glob('../../assets/images/partners/*.{png,svg}', { eager: true });
 
 const partnerLinks = {
-  '1': 'https://twitter.com/yellowcapitalhq',
-  '2': 'https://otro-enlace.com',
+  '1': 'https://www.yellowcapital.com/',
+  '2': 'https://www.mexc.com/exchange/FLORK_USDT',
+  '3': 'https://www.lbank.com/trade/flork_usdt',
 };
 
 const partners = Object.entries(partnerImages).map(([path, module]) => {

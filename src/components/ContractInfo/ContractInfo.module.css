@@ -5,9 +5,7 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
-  background: var(--primary-dark);
-  background-image: url('../../assets/images/new/bg.jpg');
-  background-blend-mode: multiply;
+  background-color: #18212C;
 }
 
 .title {

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from './Header.module.css'
-import { FaTelegram, FaChartLine } from 'react-icons/fa'
+import { FaTelegram, FaChartLine, FaFileContract } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import logo from '../../assets/images/new/logo_flork.svg'
@@ -112,6 +112,16 @@ const Header = () => {
             >
               <FaChartLine size={20} />
             </a>
+            <a 
+              href="https://solscan.io/token/CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump"
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.socialLink}
+              aria-label="Solscan"
+            >
+              {/* <FaChartLine size={20} /> */}
+              <FaFileContract size={20} />
+            </a>
           </div>
         </div>
 
@@ -143,7 +153,17 @@ const Header = () => {
             aria-label="Dexscreener"
           >
             {/* <FaChartLine size={20} /> */}
-            <ShareIcon />
+            <FaChartLine size={20} />
+          </a>
+          <a 
+            href="https://solscan.io/token/CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump"
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.socialLink}
+            aria-label="Solscan"
+          >
+            {/* <FaChartLine size={20} /> */}
+            <FaFileContract size={20} />
           </a>
         </div>
         

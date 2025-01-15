@@ -28,6 +28,7 @@ const Footer = () => {
             <li><a href="#ai-agent">AI Agent</a></li>
             <li><a href="#flork-wants-you">Flork Wants You</a></li>
             <li><a href="#partners">Partners</a></li>
+            <li><a href="https://florktools.io" target="_blank" rel="noopener noreferrer">Flork Tools</a></li>
           </ul>
         </div>
 
@@ -61,9 +62,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className={styles.copyrightContainer}>
+        {/* <div className={styles.copyrightContainer}>
             <p className={styles.rights}>© 2024 Flork. All rights reserved.</p>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

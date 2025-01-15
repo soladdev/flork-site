@@ -35,7 +35,8 @@ const FlorkWantsYou = () => {
         <h2 className={styles.title}>Flork Wants you</h2>
         
         <p className={styles.description}>
-          Join the Flork family by jumping into our telegram! we are waiting to give you a nice Florki hug. make sure to follow us on x for a glimpse into Flork's daily memes and happenings.
+        Hop into our Telegram and experience the warmest, quirkiest Florki hug you’ve ever had! We’re here, socks and all, ready to welcome you. 🧦💞<br/>
+        Don’t forget to follow us on X for your daily dose of Flork’s hilarious memes and behind-the-scenes shenanigans. Come for the laughs, stay for the Flork vibes!
         </p>
 
         <div className={styles.buttonsContainer}>
@@ -45,7 +46,7 @@ const FlorkWantsYou = () => {
             rel="noopener"
             className={styles.button}
           >
-            Follow me on x
+            Follow on x
           </a>
           <a 
             href="https://t.me/florkcommunity" 
@@ -53,7 +54,7 @@ const FlorkWantsYou = () => {
             rel="noopener"
             className={styles.button}
           >
-            Join my telegram
+            Join telegram
           </a>
         </div>
       </div>

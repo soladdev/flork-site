@@ -1,9 +1,7 @@
 .container {
-    padding: 50px 0 50px 0;
-    width: 100%;
-    background: var(--primary-dark);
-    background-image: url(/src/assets/images/new/bg.jpg);
-    background-blend-mode: multiply;
+  padding: 50px 0 50px 0;
+  width: 100%;
+  background: #18212C;
 }
 
 .title {
