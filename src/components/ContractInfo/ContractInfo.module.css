@@ -1,4 +1,6 @@
 .container {
+  border-top: 1px solid rgba(47, 186, 255, 0.3);
+  border-bottom: 1px solid rgba(47, 186, 255, 0.3);
   padding: 60px 0px;
   width: 100%;
   margin: 0 auto;
