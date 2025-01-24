@@ -4,15 +4,16 @@ import { FaTelegram, FaChartLine, FaFileContract } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import logo from '../../assets/images/new/logo_flork.svg'
+import { Link } from 'react-router-dom'
 
 const ShareIcon = () => (
-  <svg 
-    stroke="currentColor" 
-    fill="currentColor" 
-    strokeWidth="0" 
-    viewBox="0 0 512 512" 
-    height="20px" 
-    width="20px" 
+  <svg
+    stroke="currentColor"
+    fill="currentColor"
+    strokeWidth="0"
+    viewBox="0 0 512 512"
+    height="20px"
+    width="20px"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path d="M384 336a63.78 63.78 0 0 0-46.12 19.7l-148-83.27a63.85 63.85 0 0 0 0-32.86l148-83.27a63.8 63.8 0 1 0-15.73-27.87l-148 83.27a64 64 0 1 0 0 88.6l148 83.27A64 64 0 1 0 384 336z" />
@@ -36,10 +37,10 @@ const Header = () => {
       {/* Sección del Logo */}
       <div className={styles.logoSection}>
         <img src={logo} alt="Flork Logo" className={styles.logo} />
-        <a 
-          href="https://www.florktools.io/sign-in" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://www.florktools.io/sign-in"
+          target="_blank"
+          rel="noopener noreferrer"
           className={styles.florkToolsButton}
         >
           Flork Tools
@@ -69,6 +70,13 @@ const Header = () => {
               Partners
             </button>
           </li>
+          <li>
+            <button>
+              <Link style={{ color: "white" }} to={"/mint"}>
+                Nft Mint
+              </Link>
+            </button>
+          </li>
         </ul>
       </nav>
 
@@ -76,46 +84,46 @@ const Header = () => {
       <div className={styles.rightSection}>
         {/* Botón de redes sociales móvil */}
         <div className={styles.socialDropdown}>
-          <button 
+          <button
             className={styles.socialDropdownButton}
             onClick={() => setIsSocialMenuOpen(!isSocialMenuOpen)}
             aria-label="Social Media Menu"
           >
             <ShareIcon />
           </button>
-          
+
           <div className={`${styles.socialLinks} ${isSocialMenuOpen ? styles.show : ''}`}>
-            <a 
-              href="https://x.com/florkcto" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://x.com/florkcto"
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.socialLink}
               aria-label="Twitter"
             >
               <FaXTwitter size={20} />
             </a>
-            <a 
-              href="https://t.me/florkcommunity" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://t.me/florkcommunity"
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.socialLink}
               aria-label="Telegram"
             >
               <FaTelegram size={20} />
             </a>
-            <a 
+            <a
               href="https://dexscreener.com/solana/8edbm6xtyasazqg6nn2upkyisfv81xtlmzxhcrbgekvc"
-              target="_blank" 
-              rel="noopener noreferrer" 
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.socialLink}
               aria-label="Dexscreener"
             >
               <FaChartLine size={20} />
             </a>
-            <a 
+            <a
               href="https://solscan.io/token/CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump"
-              target="_blank" 
-              rel="noopener noreferrer" 
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.socialLink}
               aria-label="Solscan"
             >
@@ -127,38 +135,38 @@ const Header = () => {
 
         {/* Enlaces sociales para PC */}
         <div className={styles.socialLinks}>
-          <a 
-            href="https://x.com/florkcto" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://x.com/florkcto"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.socialLink}
             aria-label="Twitter"
           >
             <FaXTwitter size={20} />
           </a>
-          <a 
-            href="https://t.me/florkcommunity" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://t.me/florkcommunity"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.socialLink}
             aria-label="Telegram"
           >
             <FaTelegram size={20} />
           </a>
-          <a 
+          <a
             href="https://dexscreener.com/solana/8edbm6xtyasazqg6nn2upkyisfv81xtlmzxhcrbgekvc"
-            target="_blank" 
-            rel="noopener noreferrer" 
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.socialLink}
             aria-label="Dexscreener"
           >
             {/* <FaChartLine size={20} /> */}
             <FaChartLine size={20} />
           </a>
-          <a 
+          <a
             href="https://solscan.io/token/CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump"
-            target="_blank" 
-            rel="noopener noreferrer" 
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.socialLink}
             aria-label="Solscan"
           >
@@ -166,14 +174,14 @@ const Header = () => {
             <FaFileContract size={20} />
           </a>
         </div>
-        
+
         <a href="https://raydium.io/swap/?inputMint=sol&outputMint=CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump" className={styles.buyButton}>
           Buy Flork
         </a>
       </div>
 
       {/* Botón de menú móvil */}
-      <button 
+      <button
         className={`${styles.menuButton} ${isMenuOpen ? styles.open : ''}`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="Toggle menu"
