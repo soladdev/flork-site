@@ -141,7 +141,7 @@ const Minting = () => {
                     </button>)}
                     <div className={mintStyles.nftWrapper}>
                         <div className={mintStyles.nftImage}>
-                            <img src="./SOL.png" alt="" />
+                            <img src="./IMG_6295.gif" alt="" />
                         </div>
                         <div className={mintStyles.nftContent}>
                             <div className={mintStyles.nftName}>
