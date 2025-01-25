@@ -5,15 +5,29 @@ import Preloader from '../components/Preloader/Preloader'
 import backgroundImage from '../assets/images/new/flork_background_blanco_01.png'
 import '../styles/globals.css'
 import '../styles/variables.css'
-import Footer from '../components/Footer/Footer'
+import styles from '../components/Header/Header.module.css';
+import mintStyles from "../components/Mint/Mint.module.css";
+import { useWalletModal } from '@solana/wallet-adapter-react-ui'
+import { useWallet } from '@solana/wallet-adapter-react'
 
 const Minting = () => {
+    const { setVisible } = useWalletModal()
+    const { publicKey, connected, disconnect } = useWallet();
+
     const [loading, setLoading] = useState(true);
     const [hoverClickable, setHoverClickable] = useState(false);
     const [cursorSet, setCursorSet] = useState(() => {
         return Math.floor(Math.random() * 4) + 1;
     });
     const [fontsLoaded, setFontsLoaded] = useState(false);
+    useEffect(() => {
+        console.log(publicKey)
+        console.log(connected)
+    }, [connected])
+
+    const mint = () => {
+
+    }
 
     useEffect(() => {
         document.fonts.ready
@@ -86,8 +100,61 @@ const Minting = () => {
             ) : (
                 <>
                     <Header />
+                    {publicKey && connected ? (
+                        <div
+                            style={{
+                                position: 'absolute',
+                                display: "flex",
+                                flexDirection: "row",
+                                bottom: "1%",
+                                right: "2%",
+                                alignItems: 'center', // Aligns items vertically in the container
+                                gap: '5px',
+                                border: '1px solid #2FBAFF',  // Adds a border around the entire container
+                                padding: '10px', // Adds some space inside the border
+                                borderRadius: '10px' // Optional: to round the corners of the border
+                            }}
+                        >
+                            <div
+                                className="mtsemibold connectBtn"
+                                style={{
+                                    fontSize: 'small',
+                                    display: 'inline-flex',
+                                    alignItems: 'center', // Ensures the image and text align vertically
+                                    alignSelf: 'center', // Ensures the whole div aligns vertically in the center
+                                    marginBottom: '0' // Removes bottom margin (optional, since we want vertical centering)
+                                }}
+                            >
+                                <img className={`chainsImg`} src={`/SOL.png`} />
+                                <span className={`wallet-address`}>
+                                    {publicKey.toBase58().substring(0, 4)}...{publicKey.toBase58().substring(41)}
+                                </span>
+                            </div>
 
-                    <Footer />
+                            <button className="disconnectBtn" onClick={() => disconnect()} style={{ display: 'flex', alignItems: 'center' }}>
+                                <img src="/Disconnect.svg" />
+                            </button>
+                        </div>
+
+                    ) : (<button className={styles.connectButton} onClick={() => setVisible(true)}>
+                        Connect Wallet
+                    </button>)}
+                    <div className={mintStyles.nftWrapper}>
+                        <div className={mintStyles.nftImage}>
+                            <img src="./SOL.png" alt="" />
+                        </div>
+                        <div className={mintStyles.nftContent}>
+                            <div className={mintStyles.nftName}>
+                                <span>Flork</span>
+                                {/* <span>FLORK</span> */}
+                            </div>
+                            <span>Flork NFTs bring the internet's favorite sock puppet to life with humor, creativity, and over 100 unique traits. Collect, laugh, and share in this Solana-powered adventure.</span>
+                            <button className={mintStyles.mintButton} onClick={mint}>
+                                Mint
+                            </button>
+                        </div>
+                    </div>
+
                 </>
             )}
         </div>

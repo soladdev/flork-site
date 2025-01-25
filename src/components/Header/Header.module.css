@@ -122,6 +122,29 @@
   border: 1px solid var(--primary-light);
 }
 
+.connectButton {
+  background: var(--primary-light);
+  color: var(--primary-light2);
+  border: 1px solid var(--primary-light2);
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.connectButton:hover {
+  opacity: 0.9;
+  background: var(--primary-light2);
+  color: var(--primary-light);
+  border: 1px solid var(--primary-light);
+}
+
 /* Menú móvil */
 .menuButton {
   display: none;

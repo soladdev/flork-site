@@ -71,11 +71,11 @@ const Header = () => {
             </button>
           </li>
           <li>
-            <button>
-              <Link style={{ color: "white" }} to={"/mint"}>
+            <Link style={{ color: "white" }} to={"/mint"}>
+              <button>
                 Nft Mint
-              </Link>
-            </button>
+              </button>
+            </Link>
           </li>
         </ul>
       </nav>

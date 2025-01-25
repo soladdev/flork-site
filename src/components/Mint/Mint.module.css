@@ -1,0 +1,89 @@
+.nftWrapper {
+    margin-top: 150px;
+    padding: 20px 20px 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers everything horizontally */
+    max-width: 400px; /* Optional: sets a max width for the wrapper */
+    margin-left: auto; /* Centers it horizontally */
+    margin-right: auto; /* Centers it horizontally */
+    border: 1px solid grey;
+}
+
+.nftImage {
+    width: 100%;
+    max-width: 300px; /* Limit the image size */
+    height: auto;
+    margin-bottom: 20px; /* Space between the image and content */
+    display: flex;
+    justify-content: center; /* Centers the image */
+}
+
+.nftContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* Space inside the content block */
+    text-align: center; /* Center-aligns the text */
+}
+
+.nftName {
+    display: flex;
+    flex-direction: row; /* Keep elements in a row */
+    align-items: center;  /* Vertically aligns the items */
+    gap: 10px;  /* Adds space between the two spans */
+    font-size: 1.2rem;  /* Adjusts font size */
+}
+
+.nftName span:first-child {
+    color: #2FBAFF;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nftName span:nth-child(2) {
+    color: #ffffff; /* Default color for the second span */
+}
+
+.nftContent span {
+    font-size: 0.95rem;
+    color: #555; /* Subtle color for the description */
+    margin-bottom: 20px; /* Adds space between description and button */
+    line-height: 1.5;
+}
+
+.connectButton {
+    background-color: #2FBAFF; /* Mint button color */
+    color: white;
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.connectButton:hover {
+    background-color: #1a8db0; /* Darker color when hovered */
+}
+
+.mintButton {
+    background: var(--primary-light);
+    color: var(--primary-light2);
+    border: 1px solid var(--primary-light2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 100%;
+    text-decoration: none;
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .mintButton:hover {
+    opacity: 0.9;
+    background: var(--primary-light2);
+    color: var(--primary-light);
+    border: 1px solid var(--primary-light);
+  }
