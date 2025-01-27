@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import AnimatedCursor from 'react-animated-cursor'
 import Header from '../components/Header/Header'
 import Preloader from '../components/Preloader/Preloader'
@@ -9,10 +9,36 @@ import styles from '../components/Header/Header.module.css';
 import mintStyles from "../components/Mint/Mint.module.css";
 import { useWalletModal } from '@solana/wallet-adapter-react-ui'
 import { useWallet } from '@solana/wallet-adapter-react'
+import useUmi from '../hooks/useUmi'
+import {
+    CandyGuard,
+    CandyMachine,
+    DefaultGuardSetMintArgs,
+    fetchCandyGuard,
+    fetchCandyMachine,
+} from "@metaplex-foundation/mpl-candy-machine";
+import { fetchAddressLookupTable } from "@metaplex-foundation/mpl-toolbox";
+import {
+    publicKey as candyPublicKey,
+    generateSigner,
+    signAllTransactions,
+    some,
+    unwrapOption,
+} from "@metaplex-foundation/umi";
+import { base58 } from "@metaplex-foundation/umi/serializers";
+import { WalletSignTransactionError } from "@solana/wallet-adapter-base";
+import { buildTx, getRequiredCU } from '../components/Mint/mintHelper'
+
+const candyMachineId = import.meta.env.VITE_CANDY_MACHINE_ID ?? "";
 
 const Minting = () => {
+    const umi = useUmi();
     const { setVisible } = useWalletModal()
     const { publicKey, connected, disconnect } = useWallet();
+    const [candyMachine, setCandyMachine] = useState(null);
+    const [candyGuard, setCandyGuard] = useState(null);
+    const [isMinting, setIsMinting] = useState(false);
+    const [amount, setAmount] = useState(1);
 
     const [loading, setLoading] = useState(true);
     const [hoverClickable, setHoverClickable] = useState(false);
@@ -20,14 +46,149 @@ const Minting = () => {
         return Math.floor(Math.random() * 4) + 1;
     });
     const [fontsLoaded, setFontsLoaded] = useState(false);
+
     useEffect(() => {
-        console.log(publicKey)
-        console.log(connected)
-    }, [connected])
+        (async () => {
+            const candyMachinePublicKey = candyPublicKey(candyMachineId);
+            const candyMachine = await fetchCandyMachine(umi, candyMachinePublicKey);
+            const candyGuard = await fetchCandyGuard(umi, candyMachine.mintAuthority);
+            setCandyMachine(candyMachine);
+            setCandyGuard(candyGuard);
+        })();
+    }, []);
 
-    const mint = () => {
+    const tokenBurnGuard = useMemo(() => {
+        return candyGuard ? unwrapOption(candyGuard.guards.tokenBurn) : null;
+    }, [candyGuard]);
 
-    }
+    const cost = useMemo(() => {
+        if (!tokenBurnGuard) return "Free mint";
+        return Number(tokenBurnGuard.amount);
+    }, [tokenBurnGuard]);
+
+    const mint = useCallback(async () => {
+        if (!candyMachine) throw new Error("No candy machine");
+        if (!candyGuard)
+            throw new Error(
+                "No candy guard found. Set up a guard for your candy machine."
+            );
+
+        setIsMinting(true);
+
+        try {
+            const { guards } = candyGuard;
+
+            const enabledGuardsKeys =
+                guards && Object.keys(guards).filter((guardKey) => guards[guardKey]);
+
+            let mintArgs = {};
+
+            if (enabledGuardsKeys) {
+                enabledGuardsKeys.forEach((guardKey) => {
+                    const guardObject = unwrapOption(guards[guardKey]);
+                    if (!guardObject) return null;
+
+                    mintArgs = { ...mintArgs, [guardKey]: some(guardObject) };
+                });
+            }
+
+            let tables = [];
+            const lut = import.meta.env.NEXT_PUBLIC_LUT;
+            if (lut) {
+                const lutPubKey = candyPublicKey(lut);
+                const fetchedLut = await fetchAddressLookupTable(umi, lutPubKey);
+                tables = [fetchedLut];
+            } else {
+                console.log("No LUT found");
+            }
+
+            const mintTxs = [];
+            let nftsigners = [];
+
+            const latestBlockhash = await umi.rpc.getLatestBlockhash({
+                commitment: "finalized",
+            });
+
+            const nftMint = generateSigner(umi);
+            const txForSimulation = buildTx(
+                umi,
+                candyMachine,
+                candyGuard,
+                nftMint,
+                mintArgs,
+                tables,
+                latestBlockhash,
+                1_400_000
+            );
+            const requiredCu = await getRequiredCU(umi, txForSimulation);
+
+            for (let i = 0; i < amount; i++) {
+                const nftMint = generateSigner(umi);
+                nftsigners.push(nftMint);
+                const transaction = buildTx(
+                    umi,
+                    candyMachine,
+                    candyGuard,
+                    nftMint,
+                    mintArgs,
+                    tables,
+                    latestBlockhash,
+                    requiredCu
+                );
+                mintTxs.push(transaction);
+            }
+            if (!mintTxs.length) {
+                console.error("no mint tx built!");
+                return;
+            }
+
+            const signedTransactions = await signAllTransactions(
+                mintTxs.map((transaction, index) => ({
+                    transaction,
+                    signers: [umi.payer, nftsigners[index]],
+                }))
+            );
+
+            let signatures = [];
+            let amountSent = 0;
+
+            const sendPromises = signedTransactions.map((tx, index) => {
+                return umi.rpc
+                    .sendTransaction(tx, {
+                        skipPreflight: true,
+                        maxRetries: 1,
+                        preflightCommitment: "finalized",
+                        commitment: "finalized",
+                    })
+                    .then((signature) => {
+                        console.log(
+                            `Transaction ${index + 1} resolved with signature: ${base58.deserialize(signature)[0]
+                            }`
+                        );
+                        amountSent = amountSent + 1;
+                        signatures.push(signature);
+                        return { status: "fulfilled", value: signature };
+                    })
+                    .catch((error) => {
+                        console.error(`Transaction ${index + 1} failed:`, error);
+                        return { status: "rejected", reason: error };
+                    });
+            });
+
+            await Promise.allSettled(sendPromises);
+
+            alert("Minted successfully!");
+        } catch (e) {
+            console.error(e);
+            if (e instanceof WalletSignTransactionError) {
+                console.error("Transaction cancelled");
+            } else {
+                console.error("Minting failed");
+            }
+        } finally {
+            setIsMinting(false);
+        }
+    }, [umi, amount, candyMachine, candyGuard]);
 
     useEffect(() => {
         document.fonts.ready
@@ -139,21 +300,23 @@ const Minting = () => {
                     ) : (<button className={styles.connectButton} onClick={() => setVisible(true)}>
                         Connect Wallet
                     </button>)}
-                    <div className={mintStyles.nftWrapper}>
-                        <div className={mintStyles.nftImage}>
-                            <img src="./IMG_6295.gif" alt="" />
-                        </div>
-                        <div className={mintStyles.nftContent}>
-                            <div className={mintStyles.nftName}>
-                                <span>Flork</span>
-                                {/* <span>FLORK</span> */}
+                    {
+                        publicKey && connected && (<div className={mintStyles.nftWrapper}>
+                            <div className={mintStyles.nftImage}>
+                                <img src="./IMG_6295.gif" alt="" />
                             </div>
-                            <span>Flork NFTs bring the internet's favorite sock puppet to life with humor, creativity, and over 100 unique traits. Collect, laugh, and share in this Solana-powered adventure.</span>
-                            <button className={mintStyles.mintButton} onClick={mint}>
-                                Mint
-                            </button>
-                        </div>
-                    </div>
+                            <div className={mintStyles.nftContent}>
+                                <div className={mintStyles.nftName}>
+                                    <span>Flork</span>
+                                    {/* <span>FLORK</span> */}
+                                </div>
+                                <span>Flork NFTs bring the internet's favorite sock puppet to life with humor, creativity, and over 100 unique traits. Collect, laugh, and share in this Solana-powered adventure.</span>
+                                <button className={mintStyles.mintButton} onClick={mint}>
+                                    Mint
+                                </button>
+                            </div>
+                        </div>)
+                    }
 
                 </>
             )}
