@@ -155,7 +155,7 @@ const Minting = () => {
             const sendPromises = signedTransactions.map((tx, index) => {
                 return umi.rpc
                     .sendTransaction(tx, {
-                        skipPreflight: true,
+                        skipPreflight: false,
                         maxRetries: 1,
                         preflightCommitment: "finalized",
                         commitment: "finalized",
@@ -167,6 +167,7 @@ const Minting = () => {
                         );
                         amountSent = amountSent + 1;
                         signatures.push(signature);
+                        alert("Minted successfully!");
                         return { status: "fulfilled", value: signature };
                     })
                     .catch((error) => {
@@ -176,8 +177,6 @@ const Minting = () => {
             });
 
             await Promise.allSettled(sendPromises);
-
-            alert("Minted successfully!");
         } catch (e) {
             console.error(e);
             if (e instanceof WalletSignTransactionError) {
@@ -303,7 +302,7 @@ const Minting = () => {
                     {
                         publicKey && connected && (<div className={mintStyles.nftWrapper}>
                             <div className={mintStyles.nftImage}>
-                                <img src="./IMG_6295.gif" alt="" />
+                                <img src="./collection.gif" alt="" />
                             </div>
                             <div className={mintStyles.nftContent}>
                                 <div className={mintStyles.nftName}>
